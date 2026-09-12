@@ -1,0 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import WhatsAppButton from "./components/WhatsAppButton";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import Projects from "./pages/Projects";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className="relative">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<ProductDetail />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+        <WhatsAppButton />
+      </div>
+    </BrowserRouter>
+  );
+}
