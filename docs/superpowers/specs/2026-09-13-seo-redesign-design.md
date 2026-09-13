@@ -3,12 +3,27 @@
 Date: 2026-09-13
 Status: Approved by user, proceeding to implementation plan
 
-## 1. Goal
+## 1. Goal and intent
 
-Rebuild indussolarsolutions.com into a mobile-first, SEO-first site covering the
-full Kanpur solar keyword cluster (installation, residential/commercial/industrial,
-subsidy/PM Surya Ghar, kW-size systems, local areas), while keeping every claim
-honest — no fabricated reviews, case studies, prices, or locations.
+**Primary goal — SEO:** rebuild indussolarsolutions.com into a mobile-first,
+SEO-first site covering the full Kanpur solar keyword cluster (installation,
+residential/commercial/industrial, subsidy/PM Surya Ghar, kW-size systems,
+local areas), so Google can find, crawl, and rank it for buyer-intent local
+searches. Every page targets a specific keyword with genuine, non-duplicated
+content — not keyword stuffing.
+
+**Secondary goal — SMO:** make every page and case study easy to *share and
+recognize* across social channels — correct Open Graph/Twitter cards on every
+route (already partly in place, extended to all new pages), consistent brand
+name/logo/handle usage, and content written so it doubles as source material
+for Instagram/Facebook/YouTube posts (before/after photos, project write-ups,
+testimonials). SMO here means shareability and brand consistency, not paid
+social ads or follower-count growth — those aren't in scope.
+
+**Non-negotiable:** keep every claim honest — no fabricated reviews, case
+studies, prices, or locations. Trust is the thing local SEO actually rewards
+(Google's own ranking factors are relevance, distance, and prominence — the
+last one built from real reviews, real links, real citations).
 
 ## 2. Non-goals
 
@@ -143,9 +158,13 @@ convert `<img>` usage to include explicit `width`/`height` and `loading="lazy"`
 
 `docs/seo-offsite-checklist.md` — Google Business Profile setup/verification,
 review-request flow, local backlink/directory targets, partnership ideas,
-YouTube video list mapped to existing pages, Search Console + GA4 setup steps
-(with placeholder env vars for the measurement ID since real IDs aren't
-available). This is a document, not code.
+Search Console + GA4 setup steps (with placeholder env vars for the
+measurement ID since real IDs aren't available). This is a document, not code.
+
+Same file also covers the SMO side: which pages/case studies to turn into
+Instagram/Facebook posts and YouTube videos, consistent NAP + handle usage
+across profiles, and a posting cadence tied to real installations (not
+generic content) — again a checklist for the owner to execute, not code.
 
 ## 10. Verification
 
