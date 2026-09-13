@@ -23,7 +23,7 @@ function PanelSketch({ flip = false }: { flip?: boolean }) {
 
 export default function CTA() {
   return (
-    <section className="sticky top-0 z-[60] flex min-h-screen flex-col items-center justify-center overflow-hidden bg-cream px-6 py-20 text-center">
+    <section className="relative z-[60] flex flex-col items-center justify-center overflow-hidden bg-cream px-6 py-14 text-center md:sticky md:top-0 md:min-h-screen md:py-20">
       <div className="absolute bottom-0 left-0 opacity-70">
         <PanelSketch />
       </div>

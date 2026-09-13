@@ -5,7 +5,7 @@ export default function Solutions() {
   return (
     <section
       id="solutions"
-      className="sticky top-0 z-20 flex min-h-screen flex-col items-center justify-center overflow-hidden bg-charcoal px-6 py-24 md:px-16"
+      className="relative z-20 flex flex-col items-center justify-center overflow-hidden bg-charcoal px-6 py-14 md:sticky md:top-0 md:min-h-screen md:px-16 md:py-24"
     >
       <img
         src="/images/rooftop-installation.jpg"
@@ -22,7 +22,7 @@ export default function Solutions() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="font-display text-3xl font-bold text-white md:text-5xl"
         >
-          Our Solar Solutions
+          Our Solar Solutions in Kanpur
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 28 }}
@@ -31,8 +31,8 @@ export default function Solutions() {
           transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
           className="mt-3 text-sm text-white/75"
         >
-          From homes to factories, we design and install the right solar system for
-          your needs.
+          From homes to factories, we design and install the right residential,
+          commercial or industrial solar system for your needs across Kanpur.
         </motion.p>
       </div>
 

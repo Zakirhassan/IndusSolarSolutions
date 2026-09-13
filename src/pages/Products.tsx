@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { products } from "../data/products";
+import Seo from "../components/Seo";
+import { getSeo } from "../data/seo";
 import Footer from "../components/Footer";
 
 export default function Products() {
   return (
     <>
+      <Seo {...getSeo("/products")} />
       <section className="relative overflow-hidden bg-charcoal px-6 pb-16 pt-36 md:px-16 md:pb-20 md:pt-40">
         <div className="absolute inset-0 flex">
           <div className="relative w-1/2">

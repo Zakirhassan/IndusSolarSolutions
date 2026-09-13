@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Check, ArrowLeft } from "lucide-react";
 import { getProductBySlug } from "../data/products";
 import { business } from "../data/site";
+import Seo from "../components/Seo";
+import { getSeo } from "../data/seo";
 import Footer from "../components/Footer";
 
 export default function ProductDetail() {
@@ -13,6 +15,7 @@ export default function ProductDetail() {
 
   return (
     <>
+      <Seo {...getSeo(`/products/${product.slug}`)} />
       <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-charcoal px-6 pb-14 pt-36 md:px-16 md:pt-40">
         <img
           src={product.images[0]}

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Seo from "../components/Seo";
+import { getSeo } from "../data/seo";
 import Hero from "../components/Hero";
 import WhatWeOffer from "../components/WhatWeOffer";
 import WhyChoose from "../components/WhyChoose";
@@ -21,6 +23,7 @@ export default function Home() {
 
   return (
     <>
+      <Seo {...getSeo("/")} />
       <Hero />
       <WhatWeOffer />
       <WhyChoose />

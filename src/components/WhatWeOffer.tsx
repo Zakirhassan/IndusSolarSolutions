@@ -5,7 +5,7 @@ import { offerItems } from "../data/site";
 
 export default function WhatWeOffer() {
   return (
-    <section className="sticky top-0 z-[5] flex min-h-screen flex-col justify-center bg-cream-light px-6 py-24 md:px-16">
+    <section className="relative z-[5] flex flex-col justify-center bg-cream-light px-6 py-14 md:sticky md:top-0 md:min-h-screen md:px-16 md:py-24">
       <div className="mx-auto w-full max-w-6xl text-center">
         <div className="text-xs font-semibold uppercase tracking-widest text-muted">
           What We Offer
@@ -17,7 +17,7 @@ export default function WhatWeOffer() {
           transition={{ duration: 0.6 }}
           className="mx-auto mt-3 max-w-2xl font-display text-3xl font-bold text-ink md:text-5xl"
         >
-          Customized Solar Solutions for Every Energy Need
+          Customized Solar Panel Installation Solutions in Kanpur
         </motion.h2>
       </div>
 

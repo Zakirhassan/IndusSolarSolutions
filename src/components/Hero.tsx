@@ -40,7 +40,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="sticky top-0 z-0 flex min-h-[95vh] items-center justify-center overflow-hidden bg-charcoal md:h-[96vh] md:min-h-0"
+      className="relative z-0 flex min-h-[85vh] items-center justify-center overflow-hidden bg-charcoal md:sticky md:top-0 md:h-[96vh] md:min-h-0"
     >
       {heroSlides.map((s, i) => (
         <motion.img
@@ -71,9 +71,13 @@ export default function Hero() {
           Trusted Solar Partner in Kanpur
         </motion.div>
 
+        <h1 className="sr-only">
+          Best Solar Company in Kanpur – Solar Panel Installation by Indus Solar Solutions
+        </h1>
+
         <div className="relative min-h-[2.4em] w-full overflow-hidden md:min-h-[2.2em]">
           <AnimatePresence mode="wait">
-            <motion.h1
+            <motion.h2
               key={index}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -84,7 +88,7 @@ export default function Hero() {
               {slide.heading[0]}
               <br />
               {slide.heading[1]}
-            </motion.h1>
+            </motion.h2>
           </AnimatePresence>
         </div>
 

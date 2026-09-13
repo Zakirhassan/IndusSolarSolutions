@@ -5,7 +5,7 @@ export default function ProcessSteps() {
   return (
     <section
       id="process"
-      className="sticky top-0 z-30 flex min-h-screen flex-col justify-center bg-cream px-6 py-24 md:px-16"
+      className="relative z-30 flex flex-col justify-center bg-cream px-6 py-14 md:sticky md:top-0 md:min-h-screen md:px-16 md:py-24"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <motion.h2

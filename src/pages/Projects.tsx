@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { projects } from "../data/projects";
 import { heroStat } from "../data/site";
+import Seo from "../components/Seo";
+import { getSeo } from "../data/seo";
 import Footer from "../components/Footer";
 
 export default function Projects() {
   return (
     <>
+      <Seo {...getSeo("/projects")} />
       <section className="bg-charcoal px-6 pb-16 pt-36 md:px-16 md:pb-20 md:pt-40">
         <div className="mx-auto max-w-6xl">
           <div className="text-xs font-semibold uppercase tracking-widest text-gold-light">
