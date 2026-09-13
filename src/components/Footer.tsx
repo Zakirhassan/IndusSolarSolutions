@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { business, nav } from "../data/site";
+import { business } from "../data/site";
+import { localities } from "../data/localities";
 
 export default function Footer() {
   const [sent, setSent] = useState(false);
@@ -44,16 +45,52 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-10">
-            <div className="text-xs font-medium uppercase tracking-widest text-white/50">
-              Quick Links
+          <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <div>
+              <div className="text-xs font-medium uppercase tracking-widest text-white/50">
+                Solar Solutions
+              </div>
+              <div className="mt-3 flex flex-col gap-2 text-sm text-white/70">
+                <Link to="/residential-solar-kanpur" className="hover:text-white">Residential</Link>
+                <Link to="/commercial-solar-kanpur" className="hover:text-white">Commercial</Link>
+                <Link to="/industrial-solar-kanpur" className="hover:text-white">Industrial</Link>
+                <Link to="/rooftop-solar-kanpur" className="hover:text-white">Rooftop Solar</Link>
+              </div>
             </div>
-            <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70">
-              {nav.map((item) => (
-                <Link key={item.href} to={item.href} className="hover:text-white">
-                  {item.label}
-                </Link>
-              ))}
+            <div>
+              <div className="text-xs font-medium uppercase tracking-widest text-white/50">
+                Solar Resources
+              </div>
+              <div className="mt-3 flex flex-col gap-2 text-sm text-white/70">
+                <Link to="/solar-calculator-kanpur" className="hover:text-white">Solar Calculator</Link>
+                <Link to="/solar-panel-price-kanpur" className="hover:text-white">Solar Price</Link>
+                <Link to="/solar-subsidy-kanpur" className="hover:text-white">Solar Subsidy</Link>
+                <Link to="/pm-surya-ghar-kanpur" className="hover:text-white">PM Surya Ghar</Link>
+                <Link to="/faq" className="hover:text-white">FAQs</Link>
+              </div>
+            </div>
+            <div>
+              <div className="text-xs font-medium uppercase tracking-widest text-white/50">
+                Service Areas
+              </div>
+              <div className="mt-3 flex flex-col gap-2 text-sm text-white/70">
+                {localities.map((l) => (
+                  <Link key={l.slug} to={`/${l.slug}`} className="hover:text-white">
+                    {l.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="text-xs font-medium uppercase tracking-widest text-white/50">
+                Company
+              </div>
+              <div className="mt-3 flex flex-col gap-2 text-sm text-white/70">
+                <Link to="/about" className="hover:text-white">About</Link>
+                <Link to="/projects" className="hover:text-white">Projects</Link>
+                <Link to="/blog" className="hover:text-white">Blog</Link>
+                <Link to="/contact" className="hover:text-white">Contact</Link>
+              </div>
             </div>
           </div>
         </div>
