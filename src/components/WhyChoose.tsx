@@ -43,6 +43,7 @@ export default function WhyChoose() {
           <img
             src="/images/why-choose/engineer.jpg"
             alt="Indus Solar Solutions engineer at a solar installation"
+            loading="lazy"
             className="absolute inset-0 h-full w-full object-cover"
           />
         </motion.div>

@@ -20,11 +20,19 @@ function absoluteImage(image: string | undefined) {
   return src.startsWith("http") ? src : `${SITE_URL}${src}`;
 }
 
+function schemaScriptTags(schema: SeoEntry["schema"]): string {
+  if (!schema) return "";
+  const list = Array.isArray(schema) ? schema : [schema];
+  return list
+    .map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
+    .join("\n    ");
+}
+
 function injectHead(html: string, entry: SeoEntry) {
   const url = `${SITE_URL}${entry.path}`;
   const image = absoluteImage(entry.image);
 
-  return html
+  const withMeta = html
     .replace(/<title>.*?<\/title>/s, `<title>${entry.title}</title>`)
     .replace(/<meta name="description" content=".*?" \/>/s, `<meta name="description" content="${entry.description}" />`)
     .replace(/<link rel="canonical" href=".*?" \/>/s, `<link rel="canonical" href="${url}" />`)
@@ -35,6 +43,8 @@ function injectHead(html: string, entry: SeoEntry) {
     .replace(/<meta name="twitter:title" content=".*?" \/>/s, `<meta name="twitter:title" content="${entry.title}" />`)
     .replace(/<meta name="twitter:description" content=".*?" \/>/s, `<meta name="twitter:description" content="${entry.description}" />`)
     .replace(/<meta name="twitter:image" content=".*?" \/>/s, `<meta name="twitter:image" content="${image}" />`);
+
+  return withMeta.replace("</head>", `${schemaScriptTags(entry.schema)}\n  </head>`);
 }
 
 // The <Seo> component renders <title>/<meta>/<link> tags that React can only

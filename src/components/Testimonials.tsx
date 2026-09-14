@@ -143,6 +143,7 @@ export default function Testimonials() {
                 <img
                   src={t.image}
                   alt={t.name}
+                  loading="lazy"
                   className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-white shadow"
                 />
                 <div>
@@ -158,6 +159,7 @@ export default function Testimonials() {
                 src={t.image}
                 alt=""
                 aria-hidden="true"
+                loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/10" />

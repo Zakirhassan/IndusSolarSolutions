@@ -12,6 +12,7 @@ export default function BrandsMarquee() {
               key={`${brand.name}-${i}`}
               src={brand.logo}
               alt={brand.name}
+              loading="lazy"
               className="h-9 w-auto shrink-0 whitespace-nowrap opacity-80 md:h-12"
             />
           ) : (
