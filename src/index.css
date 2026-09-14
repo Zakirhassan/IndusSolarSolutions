@@ -11,9 +11,30 @@
   --color-charcoal-light: #2c2824;
   --color-ink: #1a1815;
   --color-muted: #746e63;
-  --color-gold-light: #e8cf9f;
-  --color-gold: #c9a876;
-  --color-gold-dark: #8a6d3f;
+  --color-accent-light: #e8cf9f;
+  --color-accent: #c9a876;
+  --color-accent-dark: #8a6d3f;
+}
+
+:root {
+  --gradient-accent-start: #f4e3bd;
+  --gradient-accent-mid: #d9b47c;
+  --gradient-accent-end: #8a6d3f;
+  --gradient-wordmark-start: #f6e6c4;
+  --gradient-wordmark-mid: #d9b47c;
+  --gradient-wordmark-end: #b3894f;
+}
+
+[data-color-theme="blue"] {
+  --color-accent-light: #d6e6fb;
+  --color-accent: #1c5fc4;
+  --color-accent-dark: #12356e;
+  --gradient-accent-start: #cfe0fb;
+  --gradient-accent-mid: #4f8bde;
+  --gradient-accent-end: #12356e;
+  --gradient-wordmark-start: #d6e6fb;
+  --gradient-wordmark-mid: #4f8bde;
+  --gradient-wordmark-end: #17407f;
 }
 
 html {
@@ -27,15 +48,25 @@ body {
   color: var(--color-ink);
 }
 
-.text-gold-gradient {
-  background-image: linear-gradient(180deg, #f4e3bd 0%, #d9b47c 45%, #8a6d3f 100%);
+.text-accent-gradient {
+  background-image: linear-gradient(
+    180deg,
+    var(--gradient-accent-start) 0%,
+    var(--gradient-accent-mid) 45%,
+    var(--gradient-accent-end) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .wordmark-gradient {
-  background-image: linear-gradient(180deg, #f6e6c4 0%, #d9b47c 55%, #b3894f 100%);
+  background-image: linear-gradient(
+    180deg,
+    var(--gradient-wordmark-start) 0%,
+    var(--gradient-wordmark-mid) 55%,
+    var(--gradient-wordmark-end) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -79,6 +110,6 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gold-dark);
+  background: var(--color-accent-dark);
   border-radius: 999px;
 }
