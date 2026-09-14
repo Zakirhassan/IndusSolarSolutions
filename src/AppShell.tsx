@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
 
 export default function AppShell() {
   return (
@@ -15,6 +16,7 @@ export default function AppShell() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:slug" element={<ProductDetail />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:slug" element={<ProjectDetail />} />
       </Routes>
       <WhatsAppButton />
     </div>

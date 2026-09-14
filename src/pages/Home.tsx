@@ -4,9 +4,11 @@ import Seo from "../components/Seo";
 import { getSeo } from "../data/seo";
 import Hero from "../components/Hero";
 import WhatWeOffer from "../components/WhatWeOffer";
+import HomeCalculator from "../components/HomeCalculator";
 import WhyChoose from "../components/WhyChoose";
 import Solutions from "../components/Solutions";
 import ProcessSteps from "../components/ProcessSteps";
+import ServiceAreas from "../components/ServiceAreas";
 import ImpactStats from "../components/ImpactStats";
 import Testimonials from "../components/Testimonials";
 import CTA from "../components/CTA";
@@ -26,9 +28,11 @@ export default function Home() {
       <Seo {...getSeo("/")} />
       <Hero />
       <WhatWeOffer />
+      <HomeCalculator />
       <WhyChoose />
       <Solutions />
       <ProcessSteps />
+      <ServiceAreas />
       <ImpactStats />
       <Testimonials />
       <CTA />

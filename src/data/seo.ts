@@ -1,4 +1,5 @@
 import { products } from "./products";
+import { projects } from "./projects";
 import { moneyPages } from "./moneyPages";
 import { kwSystems } from "./kwSystems";
 import { localities, getTestimonialsForLocality, getProjectsForLocality } from "./localities";
@@ -156,6 +157,18 @@ export const blogSeo: SeoEntry[] = blogArticles.map((a) => ({
   ]),
 }));
 
+export const projectSeo: SeoEntry[] = projects.map((p) => ({
+  path: `/projects/${p.slug}`,
+  title: `${p.title} in ${p.location} | Indus Solar Solutions`,
+  description: `${p.title} completed by Indus Solar Solutions in ${p.location}.`,
+  image: p.image,
+  schema: breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects" },
+    { name: p.title, path: `/projects/${p.slug}` },
+  ]),
+}));
+
 export const allSeo: SeoEntry[] = [
   ...staticSeo,
   ...productSeo,
@@ -163,6 +176,7 @@ export const allSeo: SeoEntry[] = [
   ...kwSystemSeo,
   ...localitySeo,
   ...blogSeo,
+  ...projectSeo,
 ];
 
 export function getSeo(path: string): SeoEntry {
