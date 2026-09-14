@@ -10,6 +10,7 @@ export default function Solutions() {
       <img
         src="/images/rooftop-installation.jpg"
         alt="Solar power plant"
+        loading="lazy"
         className="absolute inset-0 h-full w-full object-cover opacity-85"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/35 to-black/60" />

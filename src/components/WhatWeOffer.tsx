@@ -37,6 +37,7 @@ export default function WhatWeOffer() {
               <img
                 src={item.image}
                 alt={item.title}
+                loading="lazy"
                 className="card-hover-img absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />

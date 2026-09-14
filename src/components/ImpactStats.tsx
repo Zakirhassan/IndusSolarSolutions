@@ -10,6 +10,7 @@ export default function ImpactStats() {
           <img
             src={impact.photo}
             alt="Solar panels installed by Indus Solar Solutions"
+            loading="lazy"
             className="absolute inset-0 h-full w-full object-cover"
           />
         </div>

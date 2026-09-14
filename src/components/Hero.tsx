@@ -47,6 +47,7 @@ export default function Hero() {
           key={s.image}
           src={s.image}
           alt=""
+          loading={i === 0 ? undefined : "lazy"}
           animate={{ opacity: i === index ? 1 : 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
           className="absolute inset-0 h-full w-full object-cover"
