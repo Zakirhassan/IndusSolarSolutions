@@ -1,4 +1,4 @@
-import SolarCalculator from "./SolarCalculator";
+import SolarCalculatorV2 from "./SolarCalculatorV2";
 
 export default function HomeCalculator() {
   return (
@@ -8,11 +8,11 @@ export default function HomeCalculator() {
           What Could You Save With Solar?
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-sm text-muted md:text-base">
-          Enter your average monthly electricity bill for an indicative system size and savings estimate.
+          Calculate your recommended system size, savings, and payback period for your state.
         </p>
       </div>
       <div className="mt-8">
-        <SolarCalculator />
+        <SolarCalculatorV2 />
       </div>
     </section>
   );
