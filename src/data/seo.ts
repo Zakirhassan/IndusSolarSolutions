@@ -67,6 +67,16 @@ export const staticSeo: SeoEntry[] = [
     ]),
   },
   {
+    path: "/careers",
+    title: "Careers at Indus Solar Solutions | Solar Jobs in Kanpur",
+    description:
+      "Interested in solar installation, sales, or support roles in Kanpur? Reach out to Indus Solar Solutions about career opportunities.",
+    schema: breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Careers", path: "/careers" },
+    ]),
+  },
+  {
     path: "/contact",
     title: "Contact Indus Solar Solutions | Solar Company in Kanpur",
     description:

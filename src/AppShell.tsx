@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import FaqPage from "./pages/FaqPage";
 import Blog from "./pages/Blog";
@@ -31,6 +32,7 @@ export default function AppShell() {
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/blog" element={<Blog />} />
