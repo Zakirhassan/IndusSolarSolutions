@@ -83,7 +83,7 @@ export default function LocalityPage({ slug }: { slug: string }) {
             <div className="mt-6 space-y-6">
               {localTestimonials.map((t) => (
                 <div key={t.name} className="rounded-2xl bg-white p-6 shadow-md">
-                  <Quote size={22} className="text-gold-dark" fill="currentColor" />
+                  <Quote size={22} className="text-accent-dark" fill="currentColor" />
                   <p className="mt-3 text-sm leading-relaxed text-ink/85">{t.quote}</p>
                   <div className="mt-4 flex items-center gap-3">
                     <img src={t.image} alt={t.name} className="h-10 w-10 rounded-full object-cover" />

@@ -136,7 +136,7 @@ export default function Testimonials() {
           >
             <div className="flex w-[64%] flex-col justify-between p-5 sm:w-[58%] sm:p-7">
               <div>
-                <Quote size={26} className="text-gold-dark" fill="currentColor" />
+                <Quote size={26} className="text-accent-dark" fill="currentColor" />
                 <p className="mt-4 text-sm leading-relaxed text-ink/85 sm:text-base">{t.quote}</p>
               </div>
               <div className="flex items-center gap-3">

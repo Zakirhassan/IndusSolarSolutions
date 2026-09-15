@@ -28,7 +28,7 @@ export default function SolarCalculator({ compact = false }: { compact?: boolean
         value={bill}
         onChange={(e) => setBill(e.target.value)}
         placeholder="e.g. 3000"
-        className="mt-2 w-full rounded-lg border border-ink/15 px-4 py-3 text-sm outline-none focus:border-gold-dark"
+        className="mt-2 w-full rounded-lg border border-ink/15 px-4 py-3 text-sm outline-none focus:border-accent-dark"
       />
 
       {hasValidInput && (

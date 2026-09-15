@@ -13,7 +13,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
       <div className="flex w-full max-w-6xl items-center justify-between rounded-full bg-cream-light/90 px-5 py-3 shadow-lg shadow-black/10 backdrop-blur-md">
         <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold text-ink">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-charcoal text-gold-light">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-charcoal text-accent-light">
             <Zap size={16} fill="currentColor" />
           </span>
           Indus Solar

@@ -41,7 +41,7 @@ export default function WhatWeOffer() {
                 className="card-hover-img absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
-              <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow transition group-hover:bg-gold-light">
+              <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow transition group-hover:bg-accent-light">
                 <ArrowUpRight size={16} />
               </span>
               <div className="absolute inset-x-0 bottom-0 p-6">

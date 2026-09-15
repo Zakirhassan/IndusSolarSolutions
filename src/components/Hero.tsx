@@ -68,7 +68,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="mb-5 flex items-center gap-2 rounded-full border border-white/25 bg-black/45 px-4 py-2 text-xs font-semibold text-white shadow-lg backdrop-blur-md"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
           Trusted Solar Partner in Kanpur
         </motion.div>
 
@@ -84,7 +84,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="text-gold-gradient font-display text-4xl font-extrabold leading-[1.15] md:text-6xl"
+              className="text-accent-gradient font-display text-4xl font-extrabold leading-[1.15] md:text-6xl"
             >
               {slide.heading[0]}
               <br />
@@ -124,7 +124,7 @@ export default function Hero() {
           </a>
           <button
             onClick={() => setVideoOpen(true)}
-            className="flex items-center gap-3 text-sm font-medium text-white transition hover:text-gold-light"
+            className="flex items-center gap-3 text-sm font-medium text-white transition hover:text-accent-light"
           >
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm transition group-hover:bg-white/25">
               <Play size={16} fill="currentColor" />

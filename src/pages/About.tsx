@@ -43,7 +43,7 @@ export default function About() {
             {whyChoose.map((item) => (
               <div key={item.title} className="rounded-2xl bg-white p-5 shadow-md">
                 <div className="font-display text-sm font-semibold text-ink">{item.title}</div>
-                <div className="text-xs text-gold-dark">{item.hindi}</div>
+                <div className="text-xs text-accent-dark">{item.hindi}</div>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
               </div>
             ))}

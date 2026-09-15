@@ -53,7 +53,7 @@ export default function ProductDetail() {
             <ul className="mt-8 space-y-3">
               {product.features.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm text-ink/85">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-light/60 text-gold-dark">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-light/60 text-accent-dark">
                     <Check size={12} />
                   </span>
                   {f}

@@ -5,7 +5,7 @@ function PanelSketch({ flip = false }: { flip?: boolean }) {
   return (
     <svg
       viewBox="0 0 200 120"
-      className={`h-24 w-40 text-gold-dark/50 md:h-32 md:w-56 ${flip ? "-scale-x-100" : ""}`}
+      className={`h-24 w-40 text-accent-dark/50 md:h-32 md:w-56 ${flip ? "-scale-x-100" : ""}`}
       fill="none"
       stroke="currentColor"
       strokeWidth="1.2"

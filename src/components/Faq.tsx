@@ -26,7 +26,7 @@ export default function Faq({ items, heading = "Frequently Asked Questions" }: {
                   </span>
                   <ChevronDown
                     size={18}
-                    className={`shrink-0 text-gold-dark transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    className={`shrink-0 text-accent-dark transition-transform ${isOpen ? "rotate-180" : ""}`}
                   />
                 </button>
                 {isOpen && (

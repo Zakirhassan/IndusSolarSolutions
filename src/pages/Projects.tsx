@@ -13,7 +13,7 @@ export default function Projects() {
       <Seo {...getSeo("/projects")} />
       <section className="bg-charcoal px-6 pb-16 pt-36 md:px-16 md:pb-20 md:pt-40">
         <div className="mx-auto max-w-6xl">
-          <div className="text-xs font-semibold uppercase tracking-widest text-gold-light">
+          <div className="text-xs font-semibold uppercase tracking-widest text-accent-light">
             Our Projects
           </div>
           <h1 className="mt-3 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl">

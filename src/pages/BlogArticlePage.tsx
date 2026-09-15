@@ -55,7 +55,7 @@ export default function BlogArticlePage() {
         </article>
 
         <div className="mx-auto mt-12 max-w-3xl">
-          <Link to="/blog" className="text-sm font-medium text-gold-dark hover:underline">
+          <Link to="/blog" className="text-sm font-medium text-accent-dark hover:underline">
             ← Back to all guides
           </Link>
         </div>

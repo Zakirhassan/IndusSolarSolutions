@@ -16,7 +16,7 @@ export default function ServiceAreas() {
               to={`/${l.slug}`}
               className="flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm text-ink shadow-sm transition hover:shadow-md"
             >
-              <MapPin size={14} className="shrink-0 text-gold-dark" />
+              <MapPin size={14} className="shrink-0 text-accent-dark" />
               {l.name}
             </Link>
           ))}

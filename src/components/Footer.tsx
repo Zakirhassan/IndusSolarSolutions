@@ -21,7 +21,7 @@ export default function Footer() {
     <footer id="contact" className="sticky top-0 z-[70] bg-charcoal px-6 py-20 md:px-16">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 md:grid-cols-2">
         <div>
-          <div className="text-xs font-medium uppercase tracking-widest text-gold-light">
+          <div className="text-xs font-medium uppercase tracking-widest text-accent-light">
             Contact Us
           </div>
           <h2 className="mt-3 font-display text-3xl font-bold text-white md:text-4xl">
@@ -32,15 +32,15 @@ export default function Footer() {
 
           <div className="mt-10 space-y-4 text-sm text-white/70">
             <div className="flex items-start gap-3">
-              <MapPin size={18} className="mt-0.5 shrink-0 text-gold-light" />
+              <MapPin size={18} className="mt-0.5 shrink-0 text-accent-light" />
               <span>{business.address}</span>
             </div>
             <div className="flex items-center gap-3">
-              <Phone size={18} className="shrink-0 text-gold-light" />
+              <Phone size={18} className="shrink-0 text-accent-light" />
               <a href={business.callUrl}>+91 {business.phone}</a>
             </div>
             <div className="flex items-center gap-3">
-              <Mail size={18} className="shrink-0 text-gold-light" />
+              <Mail size={18} className="shrink-0 text-accent-light" />
               <a href={`mailto:${business.email}`}>{business.email}</a>
             </div>
           </div>
@@ -115,31 +115,31 @@ export default function Footer() {
                   name="firstName"
                   required
                   placeholder="First name"
-                  className="rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-dark"
+                  className="rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-accent-dark"
                 />
                 <input
                   name="lastName"
                   placeholder="Last name"
-                  className="rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-dark"
+                  className="rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-accent-dark"
                 />
               </div>
               <input
                 name="email"
                 type="email"
                 placeholder="Email address"
-                className="mt-4 w-full rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-dark"
+                className="mt-4 w-full rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-accent-dark"
               />
               <input
                 name="phone"
                 required
                 placeholder="Phone number"
-                className="mt-4 w-full rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-dark"
+                className="mt-4 w-full rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-accent-dark"
               />
               <textarea
                 name="message"
                 rows={4}
                 placeholder="How can we help you?"
-                className="mt-4 w-full resize-none rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-dark"
+                className="mt-4 w-full resize-none rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm outline-none focus:border-accent-dark"
               />
               <button
                 type="submit"

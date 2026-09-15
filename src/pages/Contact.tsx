@@ -27,15 +27,15 @@ export default function Contact() {
       <section className="bg-cream px-6 py-14 md:px-16 md:py-20">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-3">
           <a href={`https://maps.google.com/?q=${encodeURIComponent(business.address)}`} target="_blank" rel="noreferrer" className="rounded-2xl bg-white p-6 text-center shadow-md">
-            <MapPin size={22} className="mx-auto text-gold-dark" />
+            <MapPin size={22} className="mx-auto text-accent-dark" />
             <div className="mt-3 text-sm text-ink">{business.address}</div>
           </a>
           <a href={business.callUrl} className="rounded-2xl bg-white p-6 text-center shadow-md">
-            <Phone size={22} className="mx-auto text-gold-dark" />
+            <Phone size={22} className="mx-auto text-accent-dark" />
             <div className="mt-3 text-sm text-ink">+91 {business.phone}</div>
           </a>
           <a href={`mailto:${business.email}`} className="rounded-2xl bg-white p-6 text-center shadow-md">
-            <Mail size={22} className="mx-auto text-gold-dark" />
+            <Mail size={22} className="mx-auto text-accent-dark" />
             <div className="mt-3 text-sm text-ink">{business.email}</div>
           </a>
         </div>
