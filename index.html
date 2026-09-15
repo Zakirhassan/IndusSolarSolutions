@@ -56,6 +56,12 @@
     </script>
   </head>
   <body>
+    <script>
+      (function () {
+        var t = localStorage.getItem("isolar-color-theme");
+        if (t === "blue") document.documentElement.setAttribute("data-color-theme", "blue");
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

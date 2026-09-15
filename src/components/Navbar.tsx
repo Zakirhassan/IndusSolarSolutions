@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, Zap, Phone, ChevronDown } from "lucide-react";
 import { business } from "../data/site";
 import { navGroups, isNavGroup } from "../data/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -57,6 +58,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
           <a
             href={business.callUrl}
             className="rounded-full border border-charcoal/20 px-4 py-2 text-sm font-medium text-ink transition hover:bg-charcoal hover:text-white"
@@ -118,6 +120,7 @@ export default function Navbar() {
             )}
           </nav>
           <div className="mt-4 flex gap-3">
+            <ThemeToggle />
             <a
               href={business.callUrl}
               className="flex flex-1 items-center justify-center gap-2 rounded-full border border-charcoal/20 px-4 py-2 text-sm font-medium"
