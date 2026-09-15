@@ -26,7 +26,7 @@ export default function Careers() {
       <Seo {...getSeo("/careers")} />
       <section className="relative flex min-h-[45vh] items-end overflow-hidden bg-charcoal px-6 pb-10 pt-32 md:px-16 md:pb-14 md:pt-40">
         <img
-          src="/images/why-choose/engineer.jpg"
+          src="/images/careers/team-1.jpg"
           alt="Indus Solar Solutions installation team"
           className="absolute inset-0 h-full w-full object-cover"
         />

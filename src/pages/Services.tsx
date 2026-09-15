@@ -46,6 +46,15 @@ export default function Services() {
             ))}
           </div>
 
+          <div className="mt-10 overflow-hidden rounded-2xl">
+            <img
+              src="/images/services/consultation.jpg"
+              alt="Solar consultation and site survey in progress"
+              className="h-56 w-full object-cover md:h-72"
+              loading="lazy"
+            />
+          </div>
+
           <a
             href={business.whatsappUrl}
             target="_blank"
