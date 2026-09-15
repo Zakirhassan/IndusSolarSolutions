@@ -69,7 +69,7 @@ export default function Hero() {
           className="mb-5 flex items-center gap-2 rounded-full border border-white/25 bg-black/45 px-4 py-2 text-xs font-semibold text-white shadow-lg backdrop-blur-md"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          Trusted Solar Partner in Kanpur
+          Kanpur's Trusted Solar Partner — Serving Clients Across India
         </motion.div>
 
         <h1 className="sr-only">

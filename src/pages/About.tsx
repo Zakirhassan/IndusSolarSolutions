@@ -36,7 +36,8 @@ export default function About() {
             serving homes, shops and factories in {business.address}. We started small and grew through repeat
             business and referrals — {impact.heading.toLowerCase()} reflects that: {impact.stats[0].value}
             {impact.stats[0].suffix} projects completed in {impact.stats[1].value} months of operation, all
-            handled locally from consultation to after-sales support.
+            handled locally from consultation to after-sales support. Our installation crews work hands-on in and
+            around Kanpur, and we take on consultation and project work for clients across India.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">

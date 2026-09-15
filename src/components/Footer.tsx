@@ -29,6 +29,9 @@ export default function Footer() {
             <br />
             Future Together
           </h2>
+          <p className="mt-3 text-sm text-white/60">
+            Kanpur-based, proudly serving clients across India.
+          </p>
 
           <div className="mt-10 space-y-4 text-sm text-white/70">
             <div className="flex items-start gap-3">
