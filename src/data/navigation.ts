@@ -8,6 +8,7 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
 
 export const navGroups: NavEntry[] = [
   { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
   {
     label: "Solar Solutions",
     items: [

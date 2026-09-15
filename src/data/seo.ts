@@ -57,6 +57,16 @@ export const staticSeo: SeoEntry[] = [
     ]),
   },
   {
+    path: "/services",
+    title: "Our Solar Services in Kanpur | Indus Solar Solutions",
+    description:
+      "Free consultation, turnkey installation, operations & maintenance, and subsidy paperwork assistance — the full range of solar services from Indus Solar Solutions in Kanpur.",
+    schema: breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Services", path: "/services" },
+    ]),
+  },
+  {
     path: "/contact",
     title: "Contact Indus Solar Solutions | Solar Company in Kanpur",
     description:
