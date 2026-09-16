@@ -15,10 +15,14 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<"gold" | "blue">("gold");
 
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "blue" || stored === "gold") {
-      setTheme(stored);
-      applyTheme(stored);
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === "blue" || stored === "gold") {
+        setTheme(stored);
+        applyTheme(stored);
+      }
+    } catch {
+      // localStorage unavailable (privacy settings, sandboxed context) — theme just won't persist
     }
   }, []);
 
@@ -26,7 +30,11 @@ export default function ThemeToggle() {
     const next = theme === "gold" ? "blue" : "gold";
     setTheme(next);
     applyTheme(next);
-    localStorage.setItem(STORAGE_KEY, next);
+    try {
+      localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      // localStorage unavailable — theme still applies for this page view, just won't persist
+    }
   };
 
   const nextLabel = theme === "gold" ? "Switch to blue theme" : "Switch to gold theme";

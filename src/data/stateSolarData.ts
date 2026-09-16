@@ -35,7 +35,7 @@ export const stateSolarData: StateSolarData[] = [
   { name: "Tamil Nadu", avgTariffPerUnit: 7, avgSunHours: 5.4 },
   { name: "Telangana", avgTariffPerUnit: 8, avgSunHours: 5.3 },
   { name: "Tripura", avgTariffPerUnit: 7, avgSunHours: 4.4 },
-  { name: "Uttar Pradesh", avgTariffPerUnit: 7, avgSunHours: 4.9 },
+  { name: "Uttar Pradesh", avgTariffPerUnit: 8, avgSunHours: 4.5 },
   { name: "Uttarakhand", avgTariffPerUnit: 6, avgSunHours: 4.9 },
   { name: "West Bengal", avgTariffPerUnit: 8, avgSunHours: 4.6 },
   { name: "Andaman and Nicobar Islands", avgTariffPerUnit: 5, avgSunHours: 5.0 },

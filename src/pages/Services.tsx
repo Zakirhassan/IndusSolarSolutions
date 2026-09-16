@@ -49,7 +49,7 @@ export default function Services() {
           <div className="mt-10 overflow-hidden rounded-2xl">
             <img
               src="/images/services/consultation.jpg"
-              alt="Solar consultation and site survey in progress"
+              alt="Ground-mounted solar panel array installation"
               className="h-56 w-full object-cover md:h-72"
               loading="lazy"
             />

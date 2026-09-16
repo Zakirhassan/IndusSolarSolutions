@@ -371,7 +371,7 @@ export default function SolarCalculatorV2({ compact = false }: { compact?: boole
               onClick={downloadPdf}
               className="rounded-full border border-ink/15 px-3 py-1.5 text-xs font-medium"
             >
-              Download PDF
+              Print / Save as PDF
             </button>
           </div>
 
@@ -387,11 +387,11 @@ export default function SolarCalculatorV2({ compact = false }: { compact?: boole
           <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
             <div className="rounded-xl bg-cream p-4 text-center">
               <div className="text-xs text-muted">Monthly</div>
-              <div className="font-display font-semibold text-ink">{results.monthlyUnitsGen} kWh</div>
+              <div className="font-display font-semibold text-ink">{results.monthlyUnitsGen.toLocaleString("en-IN")} kWh</div>
             </div>
             <div className="rounded-xl bg-cream p-4 text-center">
               <div className="text-xs text-muted">Annual</div>
-              <div className="font-display font-semibold text-ink">{results.annualUnits} kWh</div>
+              <div className="font-display font-semibold text-ink">{results.annualUnits.toLocaleString("en-IN")} kWh</div>
             </div>
             <div className="rounded-xl bg-cream p-4 text-center">
               <div className="text-xs text-muted">30-Year</div>
@@ -403,7 +403,7 @@ export default function SolarCalculatorV2({ compact = false }: { compact?: boole
             <div className="text-xs font-semibold uppercase tracking-widest text-muted">
               Electricity Bill Savings (at ₹{tariff.toFixed(2)}/kWh)
             </div>
-            <div className="mt-2 grid grid-cols-3 gap-3 text-center">
+            <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
               <div>
                 <div className="text-xs text-muted">Monthly</div>
                 <div className="font-display font-semibold text-ink">{inr(results.monthlySavings)}</div>

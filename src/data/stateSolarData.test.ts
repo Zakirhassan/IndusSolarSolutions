@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { stateSolarData, getStateSolarData } from "./stateSolarData";
+import { SUN_HOURS_KANPUR } from "../lib/solarCalculator";
 
 describe("stateSolarData", () => {
   it("includes all 28 states and 8 union territories", () => {
@@ -18,7 +19,7 @@ describe("stateSolarData", () => {
   it("includes Uttar Pradesh with a value consistent with the existing Kanpur-specific calculator", () => {
     const up = getStateSolarData("Uttar Pradesh");
     expect(up).toBeDefined();
-    expect(up!.avgSunHours).toBeCloseTo(4.9, 1);
+    expect(up!.avgSunHours).toBeCloseTo(SUN_HOURS_KANPUR, 1);
   });
 
   it("returns undefined for an unknown state", () => {

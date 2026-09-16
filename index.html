@@ -58,8 +58,10 @@
   <body>
     <script>
       (function () {
-        var t = localStorage.getItem("isolar-color-theme");
-        if (t === "blue") document.documentElement.setAttribute("data-color-theme", "blue");
+        try {
+          var t = localStorage.getItem("isolar-color-theme");
+          if (t === "blue") document.documentElement.setAttribute("data-color-theme", "blue");
+        } catch (e) {}
       })();
     </script>
     <div id="root"></div>
