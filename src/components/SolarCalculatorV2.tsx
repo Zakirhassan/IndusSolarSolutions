@@ -135,7 +135,7 @@ export default function SolarCalculatorV2({ compact = false }: { compact?: boole
             <Sparkles size={14} /> Solar Savings Calculator
           </div>
           <h3 className="mt-1 font-display text-lg font-bold text-ink md:text-xl">
-            What Could You Save With Solar?
+            {compact ? "Live Savings Calculator" : "What Could You Save With Solar?"}
           </h3>
           <p className="mt-1 text-xs text-muted md:text-sm">
             Fill in your details below — your savings report updates instantly as you go.

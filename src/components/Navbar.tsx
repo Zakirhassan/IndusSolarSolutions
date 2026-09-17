@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Zap, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { business } from "../data/site";
 import { navGroups, isNavGroup } from "../data/navigation";
 import ThemeToggle from "./ThemeToggle";
@@ -12,15 +12,19 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
-      <div className="flex w-full max-w-6xl items-center justify-between rounded-full bg-cream-light/90 px-5 py-3 shadow-lg shadow-black/10 backdrop-blur-md">
-        <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold text-ink">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-charcoal text-accent-light">
-            <Zap size={16} fill="currentColor" />
-          </span>
+      <div className="flex w-full max-w-[1400px] items-center justify-between rounded-full bg-cream-light/90 px-5 py-3 shadow-lg shadow-black/10 backdrop-blur-md">
+        <Link to="/" className="flex shrink-0 items-center gap-2 whitespace-nowrap font-display text-lg font-bold text-ink">
+          <img
+            src="/images/brand/indus-solar-mark-192.png"
+            alt="Indus Solar Solutions logo"
+            className="h-8 w-8 shrink-0 rounded-full object-cover"
+            width={32}
+            height={32}
+          />
           Indus Solar
         </Link>
 
-        <nav className="hidden items-center gap-6 font-body text-sm font-medium text-ink/80 lg:flex">
+        <nav className="hidden items-center gap-4 whitespace-nowrap font-body text-sm font-medium text-ink/80 xl:flex">
           {navGroups.map((entry) =>
             isNavGroup(entry) ? (
               <div
@@ -57,11 +61,11 @@ export default function Navbar() {
           )}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-3 xl:flex">
           <ThemeToggle />
           <a
             href={business.callUrl}
-            className="rounded-full border border-charcoal/20 px-4 py-2 text-sm font-medium text-ink transition hover:bg-charcoal hover:text-white"
+            className="whitespace-nowrap rounded-full border border-charcoal/20 px-4 py-2 text-sm font-medium text-ink transition hover:bg-charcoal hover:text-white"
           >
             Call Now
           </a>
@@ -69,19 +73,19 @@ export default function Navbar() {
             href={business.whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-charcoal px-4 py-2 text-sm font-medium text-white transition hover:bg-ink"
+            className="whitespace-nowrap rounded-full bg-charcoal px-4 py-2 text-sm font-medium text-white transition hover:bg-ink"
           >
             Get a Free Quote
           </a>
         </div>
 
-        <button className="lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button className="xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <div className="absolute top-20 max-h-[75vh] w-[calc(100%-2rem)] max-w-6xl overflow-y-auto rounded-3xl bg-cream-light p-5 shadow-xl lg:hidden">
+        <div className="absolute top-20 max-h-[75vh] w-[calc(100%-2rem)] max-w-6xl overflow-y-auto rounded-3xl bg-cream-light p-5 shadow-xl xl:hidden">
           <nav className="flex flex-col gap-1 font-body text-base">
             {navGroups.map((entry) =>
               isNavGroup(entry) ? (

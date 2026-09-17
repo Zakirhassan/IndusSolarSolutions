@@ -23,7 +23,7 @@ export const staticSeo: SeoEntry[] = [
     path: "/",
     title: "Indus Solar Solutions | Best Solar Company in Kanpur",
     description:
-      "Indus Solar Solutions is Kanpur's trusted solar panel installation company — residential, commercial & industrial rooftop solar, solar subsidy assistance, batteries and maintenance in Kidwai Nagar and nearby areas.",
+      "Kanpur's trusted solar panel installation company — residential, commercial & industrial rooftop solar, subsidy assistance, batteries and maintenance.",
     schema: breadcrumbSchema([{ name: "Home", path: "/" }]),
   },
   {

@@ -21,7 +21,18 @@ export default function Footer() {
     <footer id="contact" className="sticky top-0 z-[70] bg-charcoal px-6 py-20 md:px-16">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 md:grid-cols-2">
         <div>
-          <div className="text-xs font-medium uppercase tracking-widest text-accent-light">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5">
+            <img
+              src="/images/brand/indus-solar-mark-192.png"
+              alt="Indus Solar Solutions logo"
+              className="h-6 w-6 rounded-full object-cover"
+              width={24}
+              height={24}
+              loading="lazy"
+            />
+            <span className="font-display text-sm font-bold text-ink">Indus Solar Solutions</span>
+          </div>
+          <div className="mt-6 text-xs font-medium uppercase tracking-widest text-accent-light">
             Contact Us
           </div>
           <h2 className="mt-3 font-display text-3xl font-bold text-white md:text-4xl">

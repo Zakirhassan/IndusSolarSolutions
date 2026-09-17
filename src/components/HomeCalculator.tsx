@@ -12,7 +12,7 @@ export default function HomeCalculator() {
         </p>
       </div>
       <div className="mt-8">
-        <SolarCalculatorV2 />
+        <SolarCalculatorV2 compact />
       </div>
     </section>
   );
