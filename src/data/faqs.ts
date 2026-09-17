@@ -39,7 +39,7 @@ export const faqs: FaqEntry[] = [
     slug: "subsidy-amount",
     question: "What is the solar subsidy in Kanpur?",
     answer:
-      "Residential rooftop solar under the central government's PM Surya Ghar Muft Bijli Yojana can get a subsidy of up to ₹78,000 depending on system size and eligibility. Subsidy rules are set by the government and can change — always verify current figures on the official PM Surya Ghar portal before deciding.",
+      "Residential rooftop solar in Kanpur can draw on two subsidies: the central government's PM Surya Ghar Muft Bijli Yojana (up to ₹78,000) plus Uttar Pradesh's own UPNEDA state top-up (up to ₹30,000), a combined total of up to ₹1,08,000 depending on system size and eligibility. See our Solar Subsidy in Kanpur page for the full breakdown — subsidy rules are set by the government and can change, so always verify current figures on the official PM Surya Ghar and UPNEDA portals before deciding.",
   },
   {
     slug: "pm-surya-ghar-apply",

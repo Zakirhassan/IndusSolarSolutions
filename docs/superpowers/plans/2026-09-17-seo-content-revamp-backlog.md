@@ -47,27 +47,69 @@ the repo — see conversation history if the specifics need to be re-checked.
   merged (can't run real Lighthouse against localhost in this environment) —
   recommend the owner run PageSpeed Insights after deploy to confirm.
 
-## Workstream 3 — Content rewrite: remove "AI slop," add real depth (NOT STARTED)
+## Workstream 3 — Content rewrite: remove "AI slop," add real depth (MOSTLY DONE — 2026-09-17)
 
 User's own framing: pages like Solar Subsidy and Solar Solutions read as
 AI-generated, follow the same repeated structural pattern on every page, and
 need to read like they were written by a professional who specializes in
 solar — with all data/claims verified and validated, not just plausible-sounding.
 
-- [ ] Build/use a solar-specialist review pass (an agent briefed specifically
-  on solar-industry knowledge) that revisits every content page one by one —
-  not a single global find-replace, since the complaint is structural
-  sameness across pages.
-- [ ] Rewrite each page so its structure/voice varies page-to-page and reads
-  as professionally written, not templated AI output.
-- [ ] Verify and validate every factual claim/number on each page (subsidy
-  figures, tariffs, specs, timelines) against current public sources.
-- [ ] Add more images site-wide, specifically **residential** imagery — the
-  business is residential-focused and should show homes/rooftops, not just
-  generic solar-farm/industrial stock shots.
-- [ ] Build a clear, explicit **Central + State subsidy breakdown** — two
-  distinct schemes shown separately and clearly (not blended into one vague
-  paragraph) on the subsidy pages.
+- [x] Verified new facts via web research before writing anything: Uttar
+  Pradesh runs its own UPNEDA state top-up subsidy (₹15,000/kW, capped
+  ₹30,000/household) **on top of** the central PM Surya Ghar subsidy
+  (₹78,000 cap) — corroborated across UPNEDA-adjacent sources and Tata
+  Power's own guide. The site previously only mentioned the central scheme;
+  this was a real, missing, non-fabricated fact.
+- [x] Rewrote all 9 `moneyPages.ts` entries (the Solar Solutions/Subsidy/
+  Price/Calculator pages) — extended the page template
+  (`MoneyPageSection`) to support bullets, stat-grids and inline images
+  alongside prose, then varied which shape each page/section uses so pages
+  no longer share one identical "intro + 3 uniform paragraphs" structure.
+  Every fact reused is one already published elsewhere on the site (kW
+  sizing bill ranges, panel counts, subsidy figures) — nothing invented.
+- [x] Built the explicit **Central + State subsidy breakdown** on
+  `/solar-subsidy-kanpur`: separate stat-grid sections for PM Surya Ghar
+  (central) and UPNEDA (state), then a combined-total section
+  (₹78,000 + ₹30,000 = up to ₹1,08,000 for a 3kW system), each with its own
+  "verify on the official portal" hedge. Updated `/pm-surya-ghar-kanpur` to
+  cross-reference it, and fixed the `subsidy-amount` FAQ answer, which had
+  gone inconsistent (central-only) the moment the new page shipped.
+- [x] Sourced 2 genuine, properly-licensed residential rooftop photos (CC
+  BY-SA 4.0, Nizil Shah / Wikimedia Commons — real homes in Mehsana,
+  Gujarat, not a stock solar farm) after finding the existing image library
+  was **entirely generic international stock photography** with no
+  authentic Indian/residential content — see finding below. Cropped,
+  compressed, credited at `public/images/residential/CREDITS.md`, and woven
+  into the Installation and Residential Solar pages via the new inline-image
+  section slot.
+- [x] Fixed a real honesty issue found along the way: `About.tsx`'s hero
+  image alt text claimed to show "Indus Solar Solutions team," but the
+  photo is a generic stock shot of an unrelated utility-scale solar farm —
+  corrected the alt text so it no longer implies it's this business's own
+  people/work (the site's own non-negotiable, already followed for
+  testimonials/projects, had drifted here).
+- [x] Verified: `tsc -b` clean, full test suite (63/63), `npm run build`
+  (prerender + sitemap), Playwright screenshots of the subsidy, residential
+  and price pages confirm the new stat/bullet/image layout renders
+  correctly with no console errors.
+
+**Known gap, not fixed this pass:** the broader image library
+(`hero-2b-adlershof.jpg`, `why-choose/engineer.jpg`, `careers/team-1.jpg`,
+etc.) is still generic international stock photography — a Japanese/East
+Asian commercial rooftop, a Western open-field solar farm, and Western
+coworkers standing in for the "Careers" team photo. None of it is
+misrepresented as this business's own work (already fine per the original
+spec's rule), but none of it reads as Indian or residential either, which
+was part of the original complaint. Replacing it properly means either the
+owner's own real project photos, or a further round of the same
+verify-a-real-license sourcing done here for the 2 new photos — flagging
+as a follow-up rather than guessing more stock replacements under time
+pressure.
+- [ ] Lighter pass on `localities.ts` (6 short intros) and `kwSystems.ts` (5
+  entries): reviewed both — these already read as distinct, locality/size-
+  specific copy anchored to real linked projects/testimonials, not the
+  repeated-template pattern the moneyPages had. Left as-is; revisit only if
+  they still read flat once the moneyPages fix is live for comparison.
 
 ## Workstream 4 — Solar Calculator redesign (DONE — 2026-09-17)
 

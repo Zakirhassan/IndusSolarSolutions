@@ -51,6 +51,39 @@ export default function MoneyPage({ slug }: { slug: string }) {
               <div key={section.heading}>
                 <h2 className="font-display text-xl font-bold text-ink md:text-2xl">{section.heading}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted md:text-base">{section.body}</p>
+
+                {section.bullets && (
+                  <ul className="mt-4 space-y-2">
+                    {section.bullets.map((item) => (
+                      <li key={item} className="flex gap-2 text-sm leading-relaxed text-muted md:text-base">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-dark" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {section.stats && (
+                  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    {section.stats.map((stat) => (
+                      <div key={stat.label} className="rounded-xl bg-white p-4 shadow-sm">
+                        <div className="font-display text-lg font-bold text-ink">{stat.value}</div>
+                        <div className="mt-0.5 text-xs text-muted">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {section.image && (
+                  <div className="mt-4 overflow-hidden rounded-2xl">
+                    <img
+                      src={section.image}
+                      alt={section.imageAlt ?? section.heading}
+                      loading="lazy"
+                      className="h-56 w-full object-cover md:h-72"
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>

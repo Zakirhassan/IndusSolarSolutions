@@ -12,7 +12,7 @@ export default function About() {
       <section className="relative flex min-h-[45vh] items-end overflow-hidden bg-charcoal px-6 pb-10 pt-32 md:px-16 md:pb-14 md:pt-40">
         <img
           src="/images/why-choose/engineer.jpg"
-          alt="Indus Solar Solutions team"
+          alt="Solar installation engineer inspecting a rooftop array"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
