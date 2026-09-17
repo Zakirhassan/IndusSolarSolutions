@@ -69,13 +69,25 @@ solar — with all data/claims verified and validated, not just plausible-soundi
   distinct schemes shown separately and clearly (not blended into one vague
   paragraph) on the subsidy pages.
 
-## Workstream 4 — Solar Calculator redesign (NOT STARTED)
+## Workstream 4 — Solar Calculator redesign (DONE — 2026-09-17)
 
-- [ ] Redesign `SolarCalculatorV2` from a multi-step "next → next → next"
-  wizard into a single-page, live-updating layout — all inputs and the
-  results visible/updating together on one screen, matching how Waree's
-  calculator actually behaves in practice (not just its step content, which
-  the current wizard already mirrors).
+- [x] Redesigned `SolarCalculatorV2` from a multi-step "next → next → next"
+  wizard into a single-page, live-updating layout — all three input cards
+  (method, location/customer, tariff) and the results report are visible
+  together; the report recomputes on every keystroke via the existing
+  `useMemo`, no "Next"/"Calculate" button required. Desktop: two-column
+  (inputs left, sticky live report right). Mobile: single stacked column,
+  same live behavior. Added a placeholder state in the report column before
+  any valid input is entered, and a "Reset" action.
+  Also widened the `/solar-calculator-kanpur` page's calculator container
+  (`max-w-3xl` -> `max-w-5xl`, pulled out of the article-text wrapper) so the
+  two-column layout has room; `HomeCalculator` (homepage) already had enough
+  width.
+- [x] Verified: rewrote `SolarCalculatorV2.test.tsx` for the new no-wizard
+  behavior (63/63 tests pass across the suite), `npm run build` succeeds
+  (prerender + sitemap unaffected), Playwright screenshots at 1400px and
+  390px confirm the live two-column report on the dedicated calculator page
+  and the correct stacked mobile layout.
 
 ## Reference — Technical SEO scorecard (audited 2026-09-17, see chat for full table)
 

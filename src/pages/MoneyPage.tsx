@@ -37,13 +37,15 @@ export default function MoneyPage({ slug }: { slug: string }) {
       <section className="bg-cream px-6 py-14 md:px-16 md:py-20">
         <div className="mx-auto max-w-3xl">
           <p className="text-sm leading-relaxed text-muted md:text-base">{page.intro}</p>
+        </div>
 
-          {page.slug === "solar-calculator-kanpur" && (
-            <div className="mt-8">
-              <SolarCalculatorV2 />
-            </div>
-          )}
+        {page.slug === "solar-calculator-kanpur" && (
+          <div className="mx-auto mt-8 max-w-5xl">
+            <SolarCalculatorV2 />
+          </div>
+        )}
 
+        <div className="mx-auto max-w-3xl">
           <div className="mt-10 space-y-10">
             {page.sections.map((section) => (
               <div key={section.heading}>
