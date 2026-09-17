@@ -48,6 +48,7 @@ export default function Hero() {
           src={s.image}
           alt=""
           loading={i === 0 ? undefined : "lazy"}
+          fetchPriority={i === 0 ? "high" : undefined}
           animate={{ opacity: i === index ? 1 : 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
           className="absolute inset-0 h-full w-full object-cover"

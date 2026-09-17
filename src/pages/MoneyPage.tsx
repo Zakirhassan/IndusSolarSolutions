@@ -19,7 +19,7 @@ export default function MoneyPage({ slug }: { slug: string }) {
     <>
       <Seo {...getSeo(`/${page.slug}`)} />
       <section className="relative flex min-h-[50vh] items-end overflow-hidden bg-charcoal px-6 pb-10 pt-32 md:min-h-[60vh] md:px-16 md:pb-14 md:pt-40">
-        <img src={page.heroImage} alt={page.h1} className="absolute inset-0 h-full w-full object-cover" />
+        <img src={page.heroImage} alt={page.h1} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         <div className="relative z-10 mx-auto w-full max-w-6xl">
           <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: page.h1, path: `/${page.slug}` }]} />

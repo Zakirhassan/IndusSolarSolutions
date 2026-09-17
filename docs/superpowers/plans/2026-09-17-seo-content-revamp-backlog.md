@@ -31,16 +31,21 @@ the repo — see conversation history if the specifics need to be re-checked.
   (`rgb(238,243,252)` in blue theme, computed via `getComputedStyle`), footer
   visibly shifts to navy, no console errors.
 
-## Workstream 2 — Core Web Vitals / image optimization (NOT STARTED)
+## Workstream 2 — Core Web Vitals / image optimization (DONE — 2026-09-17)
 
-- [ ] Compress all images in `public/images/` — worst offenders found:
-  `hero-solar-farm.jpg` (4.9MB), `solar-farm-telangana.jpg` (~900KB),
-  `hero-2b-adlershof.jpg` (~800KB), several others 200–600KB.
-- [ ] Add explicit `width`/`height` (or aspect-ratio) to images to prevent CLS;
-  add `fetchpriority="high"` to the LCP/hero image.
-- [ ] Re-check Lighthouse/PageSpeed-style Core Web Vitals after the fix —
-  this was identified as the single biggest lever standing between the
-  current ~65–72/100 realistic SEO score and the user's 90+ target.
+- [x] Compress all images in `public/images/` — resized anything over 1600px
+  wide and re-encoded as mozjpeg q78 (png q80). 42 files touched, total
+  16.2MB -> 6.3MB (-62%). `hero-solar-farm.jpg` alone: 4.9MB -> 173KB.
+- [x] Add `fetchpriority="high"` to every page-type's LCP hero image (Hero.tsx
+  homepage slider slide 0, MoneyPage.tsx, LocalityPage.tsx); add
+  `loading="lazy"` to below-the-fold images that lacked it (LocalityPage
+  project cards + testimonial avatars). CLS was already handled correctly —
+  hero sections reserve height via `min-h-[...]` regardless of image load.
+- [x] Verified: full test suite (60/60), Playwright screenshot diff before/
+  after compression shows no visible quality loss, no failed/4xx requests.
+- [ ] Re-check actual Lighthouse/PageSpeed score on the deployed site once
+  merged (can't run real Lighthouse against localhost in this environment) —
+  recommend the owner run PageSpeed Insights after deploy to confirm.
 
 ## Workstream 3 — Content rewrite: remove "AI slop," add real depth (NOT STARTED)
 
