@@ -27,14 +27,22 @@
 
 [data-color-theme="blue"] {
   --color-accent-light: #d6e6fb;
-  --color-accent: #1c5fc4;
-  --color-accent-dark: #12356e;
+  --color-accent: #1d4fd8;
+  --color-accent-dark: #0f2f70;
   --gradient-accent-start: #cfe0fb;
-  --gradient-accent-mid: #4f8bde;
-  --gradient-accent-end: #12356e;
+  --gradient-accent-mid: #3f6fd4;
+  --gradient-accent-end: #0f2f70;
   --gradient-wordmark-start: #d6e6fb;
-  --gradient-wordmark-mid: #4f8bde;
-  --gradient-wordmark-end: #17407f;
+  --gradient-wordmark-mid: #3f6fd4;
+  --gradient-wordmark-end: #14337d;
+
+  /* Re-tint the page surfaces too — without this, only accent-colored
+     elements (buttons, badges, the scrollbar thumb) switch and the page
+     background stays the warm gold-theme cream, so the toggle looks broken. */
+  --color-cream: #eef3fc;
+  --color-cream-light: #f6f9fe;
+  --color-charcoal: #101a33;
+  --color-charcoal-light: #16213f;
 }
 
 html {

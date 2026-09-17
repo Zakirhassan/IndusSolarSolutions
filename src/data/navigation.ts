@@ -10,7 +10,7 @@ export const navGroups: NavEntry[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   {
-    label: "Solar Solutions",
+    label: "Solutions",
     items: [
       { label: "Solar Panel Installation", href: "/solar-panel-installation-kanpur" },
       { label: "Rooftop Solar", href: "/rooftop-solar-kanpur" },
@@ -20,7 +20,7 @@ export const navGroups: NavEntry[] = [
     ],
   },
   {
-    label: "Solar Systems",
+    label: "Systems",
     items: [
       { label: "1kW System", href: "/1kw-solar-system-kanpur" },
       { label: "2kW System", href: "/2kw-solar-system-kanpur" },
@@ -29,9 +29,9 @@ export const navGroups: NavEntry[] = [
       { label: "10kW System", href: "/10kw-solar-system-kanpur" },
     ],
   },
-  { label: "Solar Calculator", href: "/solar-calculator-kanpur" },
+  { label: "Calculator", href: "/solar-calculator-kanpur" },
   {
-    label: "Solar Subsidy",
+    label: "Subsidy",
     items: [
       { label: "Solar Subsidy in Kanpur", href: "/solar-subsidy-kanpur" },
       { label: "PM Surya Ghar", href: "/pm-surya-ghar-kanpur" },
