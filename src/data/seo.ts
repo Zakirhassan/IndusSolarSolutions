@@ -7,7 +7,7 @@ import { blogArticles } from "./blog";
 import { faqs, getFaqsBySlug } from "./faqs";
 import { breadcrumbSchema, serviceSchema, faqSchema, type JsonLd } from "../lib/schema";
 
-export const SITE_URL = "https://indussolarsolutions.com";
+export const SITE_URL = "https://www.indussolarsolutions.com";
 export const DEFAULT_IMAGE = "/images/hero/hero-2b-adlershof.jpg";
 
 export type SeoEntry = {

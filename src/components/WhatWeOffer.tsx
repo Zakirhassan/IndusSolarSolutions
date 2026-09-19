@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { offerItems } from "../data/site";
+import SizedImage from "./SizedImage";
 
 export default function WhatWeOffer() {
   return (
@@ -34,7 +35,7 @@ export default function WhatWeOffer() {
               to={item.href}
               className="group relative block aspect-[16/11] overflow-hidden rounded-2xl shadow-md"
             >
-              <img
+              <SizedImage
                 src={item.image}
                 alt={item.title}
                 loading="lazy"

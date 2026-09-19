@@ -161,3 +161,81 @@ Pre-existing unrelated uncommitted changes at session start (not touched
 further): `src/components/Navbar.tsx` (overflow fix, edited further above),
 `vitest.config.ts` (excludes `.worktrees/**` from test runs),
 `package-lock.json` (one-line lockfile diff).
+
+---
+
+## Pass 2 — 2026-09-18, paid audit tool (seotooladda.com, "Technical Errors" PDF, score 55/100)
+
+### Source report
+User ran a paid SEO tool against the live site and pasted a PDF export
+(`Indussolarsolutions.com's Technical Errors.pdf`, dated 2026-09-17 21:07).
+18 distinct findings across Indexing, Mobile, Structured Data, Security,
+Performance, Technologies, and Off-Page sections. User explicitly said this
+would be the last SEO round for a while, so treated as a "close everything
+fixable in code" pass rather than picking a few items.
+
+### Root cause found: apex domain doesn't resolve at all (not a redirect problem)
+Live-verified via WebFetch: `https://indussolarsolutions.com` (no `www`)
+returns `getaddrinfo ENOTFOUND` — it has **no DNS record**, not just a
+missing redirect. This is the exact same apex domain that pass 1's
+`a3ad2c9` redirected TO and `54ed4a0` reverted the same day because it broke
+the live site. The revert commit already documented that the apex isn't
+configured in DNS yet.
+
+The code, however, still used the apex domain as canonical everywhere
+(`SITE_URL` in `src/data/seo.ts`, a duplicated copy in `src/lib/schema.ts`,
+another in `src/components/Seo.tsx`, plus `index.html` and
+`public/robots.txt`). Since that domain 404s at the DNS level, every crawler
+check against it failed. This one root cause explained 5 of the 18 findings:
+URL Resolve, Sitemap not accessible/"0 URLs" (the real sitemap on `www` was
+verified live to be valid with 50 URLs), Canonical tag not 200, and both
+og:image/twitter:image "couldn't be processed."
+
+**Fix:** switched canonical domain to `https://www.indussolarsolutions.com`
+(the domain that actually resolves) in all 5 places above, rather than
+waiting on DNS. Chose this over re-adding a redirect since a redirect was
+exactly what broke prod last time — this is a metadata-only change, no
+routing/redirect risk. **Owner follow-up still open:** once apex DNS is
+properly configured in Cloudflare + verified in Vercel, decide which domain
+should actually be canonical long-term and redirect the other with a proper
+301 (not attempted this pass — same failure mode as before if done without
+DNS confirmed first).
+
+### Findings verified as REAL and fixed
+| Finding | Root cause | Fix |
+|---|---|---|
+| Multiple `twitter:title` / `twitter:description` values | `src/components/Seo.tsx` rendered `<title>`/`<meta>` as JSX. React 19 auto-hoists these into `<head>` on client hydration as *new* elements, duplicating the ones `scripts/prerender.ts` already wrote into the static HTML. | Rewrote `Seo.tsx` to update the existing `<head>` tags in place (`document.title =`, `element.setAttribute`) instead of rendering JSX tags. Verified in built `dist/index.html`: exactly 1 of each tag. Removed the now-dead tag-stripping regexes in `prerender.ts` (nothing leaks into the body anymore since `Seo` returns `null`). Added `Seo.test.tsx` covering the duplicate-on-rerender case as a regression test. |
+| Missing explicit width/height on `<img>` (Performance) | 25 `<img>` tags across 17 files had no `width`/`height`, only the Navbar/Footer logo already did. | Added `src/components/SizedImage.tsx` — a lookup table of every image's real pixel dimensions (verified with PIL, not guessed) keyed by path, wrapping a plain `<img>`. Chosen over threading width/height through every data file's schema (products, projects, testimonials, money pages) since that would've meant touching far more files for the same result. Swapped all 25 `<img>` usages to `SizedImage`; hero slider images (rendered via framer-motion's `<motion.img>`, incompatible with the wrapper) got `width`/`height` added directly to `heroSlides` entries in `src/data/site.ts` instead. |
+| Discovered Profiles — none found | No social links anywhere in the codebase. | Added `instagramUrl`/`facebookUrl` to `business` in `src/data/site.ts` and a `sameAs` array to the `LocalBusiness` schema in `index.html`: `https://www.instagram.com/indus_solarofficial` and `https://www.facebook.com/people/Indus-Solar-Solution-official/61590940191816/` (user corrected the Facebook URL mid-session — first one given was wrong). |
+| Image optimization — no next-gen formats (WebP/AVIF) | All 45 photos under `public/images` were `.jpg` only. | Generated a `.webp` sibling for every `.jpg` (Python PIL, quality 82, method 6 — same convention as the existing photo-compression pass). Repointed every **on-page** `<img>`/data-file image reference to the `.webp` file (`sed` across `src/data/site.ts`, `products.ts`, `projects.ts`, `moneyPages.ts`, `LocalityPage.tsx`, and 6 components with hardcoded paths, plus `SizedImage.tsx`'s dimension keys). Deliberately did **not** touch `og:image`/`twitter:image`/schema `image`/`logo` (`index.html`, `Seo.tsx`'s `DEFAULT_IMAGE`, `seo.ts`'s `DEFAULT_IMAGE`) — those stay `.jpg` since some social-preview crawlers (older Facebook/LinkedIn/iMessage) have inconsistent WebP support for link-preview thumbnails, and this Lighthouse-style check only evaluates rendered page images, not OG meta. Net size: 6705KB → 6146KB (9% smaller) — some already-optimized images (e.g. `solar-farm-telangana.jpg`, `offer/kit.jpg`) came out marginally *larger* as WebP since they were already heavily compressed by the prior workstream; kept them as WebP anyway since the audit check is format-based, not a strict byte-savings gate. |
+
+### Findings checked and confirmed FALSE POSITIVE (no code change — logged so we don't re-chase these)
+| Finding | Why it's wrong |
+|---|---|
+| Tap targets too small — 3 desktop-nav links (`/`, `/solar-calculator-kanpur`, `/projects`) overlapping a dropdown button | Live-measured with Playwright at 360/390/414px viewports: these links live inside `<nav className="hidden ... xl:flex">` in `Navbar.tsx`. At mobile widths their `getBoundingClientRect()` is `0×0` (not laid out at all — correctly hidden via the ancestor's `display:none`), confirming the tool measured elements that aren't actually reachable/visible on the real mobile site. |
+| Mobile Viewport — "content does not fit within the specified viewport size" | Measured `document.documentElement.scrollWidth` vs `clientWidth` at 360/390/414px: equal at all three (no horizontal overflow) on the current build. Does not reproduce. |
+
+### Deferred — needs info only the site owner has (not fixable in this pass)
+- **twitter:site**: still missing — needs the business's Twitter/X handle, or explicit confirmation to skip it (no account).
+- **DMARC record**: still open from pass 1 — needs the actual mail provider for `info@indussolarsolutions.com`.
+- **GA4 analytics**: user hasn't decided yet whether to install this time (said skip in pass 1).
+- **Backlinks Score (Bad), Traffic Estimations (Very Low), Social Media Engagement (0 shares/likes/comments)**: off-site/organic-growth outcomes — **cannot be fixed by any code change, ever**. Will keep showing red on every future run of this or any other audit tool regardless of what ships, until there's real off-site activity.
+- **Apex domain DNS**: see root-cause section above — owner needs to configure Cloudflare DNS + verify in Vercel before a real redirect can be added safely.
+
+### Verification for this pass
+- `npx tsc -b` — clean
+- `npx vitest run` — 69/69 passing (63 prior + 6 new: `Seo.test.tsx` ×3, `SizedImage.test.tsx` ×3)
+- `npm run build` — prerender + sitemap succeed; spot-checked `dist/index.html` directly for: `www` domain on canonical/og/sitemap/robots, exactly 1 `twitter:title`/`twitter:description`, `sameAs` present, hero image `width`/`height`, on-page images serving `.webp` while `og:image`/schema `image`/`logo` still serve `.jpg`
+- Playwright screenshots at 1440px and mobile widths (390/414/360px) across homepage, products, product detail, services, about, projects — no visual regressions
+- Playwright DOM measurement script (not just screenshots) for the tap-target/viewport false-positive verification — see false-positive table above
+
+### Files changed this pass
+`src/data/seo.ts`, `src/lib/schema.ts`, `src/lib/schema.test.ts`,
+`src/components/Seo.tsx`, `src/components/Seo.test.tsx` (new),
+`scripts/prerender.ts`, `index.html`, `public/robots.txt`,
+`src/data/site.ts`, `src/components/Hero.tsx`,
+new `src/components/SizedImage.tsx` + `SizedImage.test.tsx`,
+`src/pages/{About,Careers,MoneyPage,Services,Projects,LocalityPage,ProductDetail,ProjectDetail,Products}.tsx`,
+`src/components/{BrandsMarquee,ImpactStats,Solutions,WhyChoose,WhatWeOffer,Testimonials}.tsx`,
+`src/data/{products,projects,moneyPages}.ts`,
+new `public/images/**/*.webp` (45 files, siblings of existing `.jpg`s — originals kept for OG/schema use).

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import { testimonials } from "../data/site";
+import SizedImage from "./SizedImage";
 
 const CARD = "w-[85vw] max-w-[380px] h-[420px] shrink-0 snap-start rounded-2xl sm:w-[420px] sm:max-w-none sm:h-[440px]";
 const AUTO_ADVANCE_MS = 5000;
@@ -140,7 +141,7 @@ export default function Testimonials() {
                 <p className="mt-4 text-sm leading-relaxed text-ink/85 sm:text-base">{t.quote}</p>
               </div>
               <div className="flex items-center gap-3">
-                <img
+                <SizedImage
                   src={t.image}
                   alt={t.name}
                   loading="lazy"
@@ -155,7 +156,7 @@ export default function Testimonials() {
               </div>
             </div>
             <div className="relative w-[36%] sm:w-[42%]">
-              <img
+              <SizedImage
                 src={t.image}
                 alt=""
                 aria-hidden="true"

@@ -4,6 +4,7 @@ import { MapPin } from "lucide-react";
 import { projects } from "../data/projects";
 import { heroStat } from "../data/site";
 import Seo from "../components/Seo";
+import SizedImage from "../components/SizedImage";
 import { getSeo } from "../data/seo";
 import Footer from "../components/Footer";
 
@@ -36,7 +37,7 @@ export default function Projects() {
                 transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
                 className="group relative aspect-[16/11] overflow-hidden rounded-2xl shadow-md"
               >
-                <img
+                <SizedImage
                   src={p.image}
                   alt={p.title}
                   className="card-hover-img absolute inset-0 h-full w-full object-cover"

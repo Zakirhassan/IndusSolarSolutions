@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { business, impact, whyChoose } from "../data/site";
 import { getSeo } from "../data/seo";
 import Seo from "../components/Seo";
+import SizedImage from "../components/SizedImage";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
 
@@ -10,8 +11,8 @@ export default function About() {
     <>
       <Seo {...getSeo("/about")} />
       <section className="relative flex min-h-[45vh] items-end overflow-hidden bg-charcoal px-6 pb-10 pt-32 md:px-16 md:pb-14 md:pt-40">
-        <img
-          src="/images/why-choose/engineer.jpg"
+        <SizedImage
+          src="/images/why-choose/engineer.webp"
           alt="Solar installation engineer inspecting a rooftop array"
           className="absolute inset-0 h-full w-full object-cover"
         />

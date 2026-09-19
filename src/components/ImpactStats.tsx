@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import CountUp from "./CountUp";
 import { impact } from "../data/site";
+import SizedImage from "./SizedImage";
 
 export default function ImpactStats() {
   return (
     <section className="relative z-40 flex items-center bg-cream px-6 py-14 md:sticky md:top-0 md:min-h-screen md:px-16 md:py-16">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 overflow-hidden rounded-3xl shadow-xl md:h-[85vh] md:grid-cols-5">
         <div className="relative min-h-[260px] md:col-span-3">
-          <img
+          <SizedImage
             src={impact.photo}
             alt="Solar panels installed by Indus Solar Solutions"
             loading="lazy"

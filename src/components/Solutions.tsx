@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { solutions } from "../data/site";
+import SizedImage from "./SizedImage";
 
 export default function Solutions() {
   return (
@@ -7,8 +8,8 @@ export default function Solutions() {
       id="solutions"
       className="relative z-20 flex flex-col items-center justify-center overflow-hidden bg-charcoal px-6 py-14 md:sticky md:top-0 md:min-h-screen md:px-16 md:py-24"
     >
-      <img
-        src="/images/rooftop-installation.jpg"
+      <SizedImage
+        src="/images/rooftop-installation.webp"
         alt="Solar power plant"
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover opacity-85"

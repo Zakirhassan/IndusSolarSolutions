@@ -4,6 +4,7 @@ import { getFaqsBySlug } from "../data/faqs";
 import { getSeo } from "../data/seo";
 import { business } from "../data/site";
 import Seo from "../components/Seo";
+import SizedImage from "../components/SizedImage";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Faq from "../components/Faq";
 import Footer from "../components/Footer";
@@ -19,7 +20,7 @@ export default function MoneyPage({ slug }: { slug: string }) {
     <>
       <Seo {...getSeo(`/${page.slug}`)} />
       <section className="relative flex min-h-[50vh] items-end overflow-hidden bg-charcoal px-6 pb-10 pt-32 md:min-h-[60vh] md:px-16 md:pb-14 md:pt-40">
-        <img src={page.heroImage} alt={page.h1} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
+        <SizedImage src={page.heroImage} alt={page.h1} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         <div className="relative z-10 mx-auto w-full max-w-6xl">
           <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: page.h1, path: `/${page.slug}` }]} />
@@ -76,7 +77,7 @@ export default function MoneyPage({ slug }: { slug: string }) {
 
                 {section.image && (
                   <div className="mt-4 overflow-hidden rounded-2xl">
-                    <img
+                    <SizedImage
                       src={section.image}
                       alt={section.imageAlt ?? section.heading}
                       loading="lazy"

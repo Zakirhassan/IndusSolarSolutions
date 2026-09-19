@@ -1,4 +1,5 @@
 import { brands } from "../data/site";
+import SizedImage from "./SizedImage";
 
 export default function BrandsMarquee() {
   const items = [...brands, ...brands, ...brands];
@@ -8,7 +9,7 @@ export default function BrandsMarquee() {
       <div className="flex w-max animate-marquee items-center gap-16 md:gap-20">
         {items.map((brand, i) =>
           brand.logo ? (
-            <img
+            <SizedImage
               key={`${brand.name}-${i}`}
               src={brand.logo}
               alt={brand.name}

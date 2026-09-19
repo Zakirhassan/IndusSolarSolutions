@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { whyChoose } from "../data/site";
+import SizedImage from "./SizedImage";
 
 export default function WhyChoose() {
   return (
@@ -40,8 +41,8 @@ export default function WhyChoose() {
           transition={{ duration: 0.7 }}
           className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl"
         >
-          <img
-            src="/images/why-choose/engineer.jpg"
+          <SizedImage
+            src="/images/why-choose/engineer.webp"
             alt="Indus Solar Solutions engineer at a solar installation"
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover"

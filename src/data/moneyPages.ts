@@ -30,7 +30,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "Get rooftop solar panel installation in Kanpur for homes, shops, and factories. Free site survey, subsidy assistance, and after-sales support from Indus Solar Solutions.",
     h1: "Solar Panel Installation in Kanpur",
     targetKeyword: "solar panel installation Kanpur",
-    heroImage: "/images/hero/hero-5-rooftop.jpg",
+    heroImage: "/images/hero/hero-5-rooftop.webp",
     intro:
       "Indus Solar Solutions installs rooftop solar systems across Kanpur — from single homes in Kidwai Nagar to factory rooftops in Panki. Every installation starts with a free site visit so the system we design actually matches your roof, budget and electricity usage, not a generic package.",
     sections: [
@@ -53,7 +53,7 @@ export const moneyPages: MoneyPageEntry[] = [
       {
         heading: "Why Installation Quality Matters More Than the Panel Brand",
         body: "A solar panel is rated to run for 25 years, but a poorly torqued mounting frame, an undersized cable, or a rushed roof penetration can cause problems long before the panel itself degrades. We use corrosion-resistant mounting structures rated for Kanpur's weather, certified balance-of-system components, and inspect every installation ourselves before handover.",
-        image: "/images/residential/residential-rooftop-india-1.jpg",
+        image: "/images/residential/residential-rooftop-india-1.webp",
         imageAlt: "Small rooftop solar panel array installed on a home in a dense Indian residential neighbourhood",
       },
     ],
@@ -66,7 +66,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "Rooftop solar solutions for Kanpur homes and businesses — residential, commercial and industrial rooftop systems, sized to your roof and designed for Kanpur's sun and weather.",
     h1: "Rooftop Solar Installation in Kanpur",
     targetKeyword: "rooftop solar Kanpur",
-    heroImage: "/images/hero/hero-4-array.jpg",
+    heroImage: "/images/hero/hero-4-array.webp",
     intro:
       "Rooftop solar turns unused roof space into a source of savings. Whether it's a flat concrete roof, a sloped tin shed, or a factory rooftop, we design the mounting layout, tilt angle and wiring to fit what you actually have — not the other way around.",
     sections: [
@@ -102,7 +102,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "Solar panel systems for homes in Kanpur — cut your monthly electricity bill, apply for PM Surya Ghar subsidy, and get a system sized to your household's usage.",
     h1: "Residential Solar Panels for Homes in Kanpur",
     targetKeyword: "residential solar Kanpur",
-    heroImage: "/images/rooftop-installation.jpg",
+    heroImage: "/images/rooftop-installation.webp",
     intro:
       "Most Kanpur households considering solar are trying to solve one problem: an electricity bill that keeps climbing. A correctly sized rooftop system can cut that bill significantly, and for most homes it qualifies for both a central and a state subsidy that lower the upfront cost together.",
     sections: [
@@ -123,7 +123,7 @@ export const moneyPages: MoneyPageEntry[] = [
       {
         heading: "What's Included in a Residential Package",
         body: "Panels, inverter, mounting structure, cabling and protection gear, installation, commissioning, and subsidy application assistance for both schemes — one point of contact from quote to a working system.",
-        image: "/images/residential/residential-rooftop-india-2.jpg",
+        image: "/images/residential/residential-rooftop-india-2.webp",
         imageAlt: "Rooftop solar panels installed on a residential home in a dense Indian neighbourhood, city skyline in the background",
       },
     ],
@@ -136,7 +136,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "Solar power for shops, offices and commercial buildings in Kanpur — reduce operating costs with rooftop solar sized for commercial electricity usage and load patterns.",
     h1: "Commercial Solar Installation in Kanpur",
     targetKeyword: "commercial solar installation Kanpur",
-    heroImage: "/images/offer/panels.jpg",
+    heroImage: "/images/offer/panels.webp",
     intro:
       "Commercial electricity tariffs are usually higher than residential ones, which is the main reason a rooftop system pays back faster for a shop, office or commercial building than for many homes. We size commercial systems around actual daytime load — the hours your business is open and drawing the most power.",
     sections: [
@@ -162,7 +162,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "Large-scale rooftop solar for factories and industrial units in Kanpur and Kanpur Dehat — cut per-unit power costs with systems engineered for industrial loads.",
     h1: "Industrial Solar Installation in Kanpur",
     targetKeyword: "industrial solar Kanpur",
-    heroImage: "/images/solar-farm-telangana.jpg",
+    heroImage: "/images/solar-farm-telangana.webp",
     intro:
       "Industrial units and factories around Kanpur and Kanpur Dehat often run high, steady daytime loads. That load profile — flat, predictable, and concentrated in daylight hours — is exactly where a larger rooftop or ground-mount solar system delivers the most savings per rupee invested.",
     sections: [
@@ -194,7 +194,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "What affects solar panel price in Kanpur — panel technology, inverter, mounting, and site complexity — with indicative ranges for 1kW to 10kW systems and what's included.",
     h1: "Solar Panel Price in Kanpur: 1kW–10kW Systems",
     targetKeyword: "solar panel price Kanpur",
-    heroImage: "/images/offer/kit.jpg",
+    heroImage: "/images/offer/kit.webp",
     intro:
       "Two 3kW quotes from two different vendors can differ by tens of thousands of rupees, and the reason usually isn't one vendor overcharging — it's that \"3kW system\" doesn't specify panel technology, inverter type, or mounting complexity. This page explains what actually drives the price, so a quote makes sense rather than reading as a single unexplained number.",
     sections: [
@@ -233,7 +233,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "Solar subsidy in Kanpur explained — the central PM Surya Ghar scheme plus Uttar Pradesh's own state top-up, eligibility, and how to apply, with links to official sources.",
     h1: "Solar Subsidy in Kanpur: Central + State Breakdown",
     targetKeyword: "solar subsidy Kanpur",
-    heroImage: "/images/technician-rooftop.jpg",
+    heroImage: "/images/technician-rooftop.webp",
     intro:
       "Homes in Kanpur can draw on two separate subsidies for rooftop solar, not one — a central government scheme and a Uttar Pradesh state top-up, stacked on the same installation. Most explanations online only cover the central scheme; this page breaks out both, in plain terms, with links to verify current figures officially.",
     sections: [
@@ -287,7 +287,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "PM Surya Ghar Muft Bijli Yojana explained for Kanpur residents — what the scheme covers, eligibility, and the step-by-step application process.",
     h1: "PM Surya Ghar Yojana in Kanpur: Guide & Application",
     targetKeyword: "PM Surya Ghar Kanpur",
-    heroImage: "/images/why-choose/engineer.jpg",
+    heroImage: "/images/why-choose/engineer.webp",
     intro:
       "PM Surya Ghar Muft Bijli Yojana is the central government's flagship rooftop solar subsidy scheme. It's the larger of the two subsidies available to Kanpur homeowners — see our Solar Subsidy in Kanpur page if you want the central-plus-Uttar-Pradesh-state breakdown side by side; this page focuses on the central scheme itself and how to apply.",
     sections: [
@@ -321,7 +321,7 @@ export const moneyPages: MoneyPageEntry[] = [
       "Estimate the right solar system size, generation, and potential savings for your home or business in Kanpur — enter your monthly electricity bill to get started.",
     h1: "Solar Savings Calculator for Kanpur",
     targetKeyword: "solar calculator Kanpur",
-    heroImage: "/images/impact-sunset.jpg",
+    heroImage: "/images/impact-sunset.webp",
     intro:
       "Enter your details below to get an indicative recommended system size, estimated generation, and estimated savings — the report updates live as you type. This is a starting estimate based on typical sun-hours for your state; your exact numbers depend on your roof and usage pattern, which we confirm with a free site survey.",
     sections: [

@@ -12,7 +12,7 @@ describe("breadcrumbSchema", () => {
     expect(items).toHaveLength(2);
     expect(items[0]).toMatchObject({ position: 1, name: "Home" });
     expect(items[1]).toMatchObject({ position: 2, name: "Solar Subsidy" });
-    expect(items[1].item).toBe("https://indussolarsolutions.com/solar-subsidy-kanpur");
+    expect(items[1].item).toBe("https://www.indussolarsolutions.com/solar-subsidy-kanpur");
   });
 });
 
@@ -27,7 +27,7 @@ describe("serviceSchema", () => {
     expect(result.serviceType).toBe("Residential Solar Installation");
     expect(result.areaServed).toEqual(["Kanpur"]);
     expect((result.provider as { name: string }).name).toBe("Indus Solar Solutions");
-    expect(result.url).toBe("https://indussolarsolutions.com/residential-solar-kanpur");
+    expect(result.url).toBe("https://www.indussolarsolutions.com/residential-solar-kanpur");
   });
 
   it("accepts a custom areaServed list", () => {

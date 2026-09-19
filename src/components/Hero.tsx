@@ -46,6 +46,8 @@ export default function Hero() {
         <motion.img
           key={s.image}
           src={s.image}
+          width={s.width}
+          height={s.height}
           alt={`${s.heading[0]} ${s.heading[1]} — Indus Solar Solutions, Kanpur`}
           loading={i === 0 ? undefined : "lazy"}
           fetchPriority={i === 0 ? "high" : undefined}

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://indussolarsolutions.com/sitemap.xml
+Sitemap: https://www.indussolarsolutions.com/sitemap.xml

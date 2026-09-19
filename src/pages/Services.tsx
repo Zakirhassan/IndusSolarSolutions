@@ -3,6 +3,7 @@ import { services } from "../data/services";
 import { business } from "../data/site";
 import { getSeo } from "../data/seo";
 import Seo from "../components/Seo";
+import SizedImage from "../components/SizedImage";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
 
@@ -11,8 +12,8 @@ export default function Services() {
     <>
       <Seo {...getSeo("/services")} />
       <section className="relative flex min-h-[45vh] items-end overflow-hidden bg-charcoal px-6 pb-10 pt-32 md:px-16 md:pb-14 md:pt-40">
-        <img
-          src="/images/technician-rooftop.jpg"
+        <SizedImage
+          src="/images/technician-rooftop.webp"
           alt="Indus Solar Solutions technician working on a rooftop installation"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -47,8 +48,8 @@ export default function Services() {
           </div>
 
           <div className="mt-10 overflow-hidden rounded-2xl">
-            <img
-              src="/images/services/consultation.jpg"
+            <SizedImage
+              src="/images/services/consultation.webp"
               alt="Ground-mounted solar panel array installation"
               className="h-56 w-full object-cover md:h-72"
               loading="lazy"

@@ -5,6 +5,7 @@ import { getProjectBySlug } from "../data/projects";
 import { business } from "../data/site";
 import { getSeo } from "../data/seo";
 import Seo from "../components/Seo";
+import SizedImage from "../components/SizedImage";
 import Footer from "../components/Footer";
 
 export default function ProjectDetail() {
@@ -17,7 +18,7 @@ export default function ProjectDetail() {
     <>
       <Seo {...getSeo(`/projects/${project.slug}`)} />
       <section className="relative flex min-h-[55vh] items-end overflow-hidden bg-charcoal px-6 pb-14 pt-32 md:px-16 md:pt-40">
-        <img src={project.image} alt={project.title} className="absolute inset-0 h-full w-full object-cover" />
+        <SizedImage src={project.image} alt={project.title} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         <div className="relative z-10 mx-auto w-full max-w-6xl">
           <Link to="/projects" className="inline-flex items-center gap-2 text-xs font-medium text-white/70 hover:text-white">

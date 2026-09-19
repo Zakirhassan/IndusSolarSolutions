@@ -4,6 +4,7 @@ import { Check, ArrowLeft } from "lucide-react";
 import { getProductBySlug } from "../data/products";
 import { business } from "../data/site";
 import Seo from "../components/Seo";
+import SizedImage from "../components/SizedImage";
 import { getSeo } from "../data/seo";
 import Footer from "../components/Footer";
 
@@ -17,7 +18,7 @@ export default function ProductDetail() {
     <>
       <Seo {...getSeo(`/products/${product.slug}`)} />
       <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-charcoal px-6 pb-14 pt-36 md:px-16 md:pt-40">
-        <img
+        <SizedImage
           src={product.images[0]}
           alt={product.title}
           className="absolute inset-0 h-full w-full object-cover"
@@ -72,7 +73,7 @@ export default function ProductDetail() {
           </div>
 
           <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
-            <img
+            <SizedImage
               src={product.images[1]}
               alt={product.title}
               className="h-full w-full object-cover"

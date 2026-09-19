@@ -3,7 +3,7 @@ import { business } from "../data/site";
 // Duplicated from ../data/seo's SITE_URL rather than imported: data/seo.ts imports
 // breadcrumbSchema/serviceSchema/faqSchema from this module, so importing SITE_URL
 // back from data/seo here would create a circular dependency between the two modules.
-const SITE_URL = "https://indussolarsolutions.com";
+const SITE_URL = "https://www.indussolarsolutions.com";
 
 export type JsonLd = Record<string, unknown>;
 

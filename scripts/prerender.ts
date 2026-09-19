@@ -47,19 +47,11 @@ function injectHead(html: string, entry: SeoEntry) {
   return withMeta.replace("</head>", `${schemaScriptTags(entry.schema)}\n  </head>`);
 }
 
-// The <Seo> component renders <title>/<meta>/<link> tags that React can only
-// hoist into a real <head> in the browser. Rendered here (a fragment with no
-// <head>), they serialize in place inside the body instead — strip them out
-// since injectHead() below sets the authoritative versions in the template's
-// actual <head>.
+// React DOM can emit resource hints (e.g. preload links) into the render
+// output when there's no real <head> to hoist them into during static
+// rendering — strip those so they don't leak into <body>.
 function stripLeakedHeadTags(html: string) {
-  return html
-    .replace(/<title>.*?<\/title>/gs, "")
-    .replace(/<meta name="description"[^>]*\/?>/g, "")
-    .replace(/<link rel="canonical"[^>]*\/?>/g, "")
-    .replace(/<meta property="og:[^"]*"[^>]*\/?>/g, "")
-    .replace(/<meta name="twitter:[^"]*"[^>]*\/?>/g, "")
-    .replace(/<link rel="preload"[^>]*\/?>/g, "");
+  return html.replace(/<link rel="preload"[^>]*\/?>/g, "");
 }
 
 for (const entry of allSeo) {

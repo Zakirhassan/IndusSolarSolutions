@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { products } from "../data/products";
 import Seo from "../components/Seo";
+import SizedImage from "../components/SizedImage";
 import { getSeo } from "../data/seo";
 import Footer from "../components/Footer";
 
@@ -13,15 +14,15 @@ export default function Products() {
       <section className="relative overflow-hidden bg-charcoal px-6 pb-16 pt-36 md:px-16 md:pb-20 md:pt-40">
         <div className="absolute inset-0 flex">
           <div className="relative w-1/2">
-            <img
-              src="/images/offer/panels.jpg"
+            <SizedImage
+              src="/images/offer/panels.webp"
               alt=""
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
           <div className="relative w-1/2">
-            <img
-              src="/images/why-choose/engineer.jpg"
+            <SizedImage
+              src="/images/why-choose/engineer.webp"
               alt=""
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -57,7 +58,7 @@ export default function Products() {
                 to={`/products/${p.slug}`}
                 className="group relative block aspect-[16/11] overflow-hidden rounded-2xl shadow-md"
               >
-                <img
+                <SizedImage
                   src={p.images[0]}
                   alt={p.title}
                   className="card-hover-img absolute inset-0 h-full w-full object-cover"
