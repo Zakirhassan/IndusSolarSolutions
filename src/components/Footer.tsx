@@ -51,6 +51,15 @@ export default function Footer() {
               <span>
                 {business.name}, {business.streetAddress}, {business.city}, {business.region}{" "}
                 {business.postalCode}, India
+                <br />
+                <a
+                  href={business.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-accent-light underline underline-offset-2 hover:text-white"
+                >
+                  View on Google Maps
+                </a>
               </span>
             </div>
             <div className="flex items-center gap-3">

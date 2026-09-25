@@ -13,6 +13,8 @@ export const business = {
   callUrl: "tel:+919336331925",
   instagramUrl: "https://www.instagram.com/indus_solarofficial",
   facebookUrl: "https://www.facebook.com/people/Indus-Solar-Solution-official/61590940191816/",
+  // Google Business Profile listing (stable CID link).
+  googleMapsUrl: "https://www.google.com/maps?cid=9182697000021577727",
 };
 
 export const heroVideoId = "xKxrkht7CpY"; // placeholder solar explainer video - replace with Indus Solar Solutions' own video
