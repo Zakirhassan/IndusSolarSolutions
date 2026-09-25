@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import { testimonials } from "../data/site";
 import SizedImage from "./SizedImage";
 
 const CARD = "w-[85vw] max-w-[380px] h-[420px] shrink-0 snap-start rounded-2xl sm:w-[420px] sm:max-w-none sm:h-[440px]";
 const AUTO_ADVANCE_MS = 5000;
+// The side photo is object-cover in a ~440px-tall box, so a landscape photo is
+// drawn ~660px wide. The avatar reuses the same `sizes` so only one file loads.
+const PHOTO_SIZES = "660px";
 const MOBILE_QUERY = "(max-width: 639px)";
 
 export default function Testimonials() {
@@ -126,14 +128,10 @@ export default function Testimonials() {
         onTouchEnd={restartTimer}
         className="mx-auto mt-10 flex w-full max-w-6xl snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {testimonials.map((t, i) => (
-          <motion.div
+        {testimonials.map((t) => (
+          <div
             key={t.name}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: i * 0.06 }}
-            className={`${CARD} flex overflow-hidden border border-ink/10 bg-white shadow-md`}
+            className={`reveal ${CARD} flex overflow-hidden border border-ink/10 bg-white shadow-md`}
           >
             <div className="flex w-[64%] flex-col justify-between p-5 sm:w-[58%] sm:p-7">
               <div>
@@ -145,6 +143,7 @@ export default function Testimonials() {
                   src={t.image}
                   alt={t.name}
                   loading="lazy"
+                  sizes={PHOTO_SIZES}
                   className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-white shadow"
                 />
                 <div>
@@ -161,25 +160,31 @@ export default function Testimonials() {
                 alt=""
                 aria-hidden="true"
                 loading="lazy"
+                sizes={PHOTO_SIZES}
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/10" />
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
-      <div className="mt-6 flex justify-center gap-2 sm:hidden">
+      <div className="mt-4 flex justify-center sm:hidden">
         {testimonials.map((t, i) => (
+          // 24px-tall tap target (WCAG target-size) around the small visible dot.
           <button
             key={t.name}
             onClick={() => handleDotClick(i)}
             aria-label={`Go to testimonial ${i + 1}`}
             aria-current={i === activeIndex}
-            className={`h-2 rounded-full transition-all ${
-              i === activeIndex ? "w-6 bg-charcoal" : "w-2 bg-ink/20"
-            }`}
-          />
+            className="flex h-6 min-w-6 items-center justify-center px-1"
+          >
+            <span
+              className={`block h-2 rounded-full transition-all ${
+                i === activeIndex ? "w-6 bg-charcoal" : "w-2 bg-ink/20"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>

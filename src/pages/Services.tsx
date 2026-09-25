@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { services } from "../data/services";
 import { business } from "../data/site";
 import { getSeo } from "../data/seo";
@@ -20,14 +19,11 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         <div className="relative z-10 mx-auto w-full max-w-6xl">
           <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]} />
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
+          <h1
+            className="rise mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
           >
             What We Do
-          </motion.h1>
+          </h1>
         </div>
       </section>
 
@@ -51,6 +47,7 @@ export default function Services() {
             <SizedImage
               src="/images/services/consultation.webp"
               alt="Ground-mounted solar panel array installation"
+              sizes="(min-width: 1152px) 1152px, 100vw"
               className="h-56 w-full object-cover md:h-72"
               loading="lazy"
             />

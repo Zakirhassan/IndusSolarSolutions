@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
       href={business.whatsappUrl}
       target="_blank"
       rel="noreferrer"
-      className="fixed bottom-6 right-6 z-[100] flex items-center gap-2 rounded-full bg-[#25D366] py-2.5 pl-2.5 pr-5 text-sm font-semibold text-white shadow-xl transition hover:scale-105"
+      className="fixed bottom-6 right-6 z-[100] flex items-center gap-2 rounded-full bg-[#15803d] py-2.5 pl-2.5 pr-5 text-sm font-semibold text-white shadow-xl transition hover:scale-105"
     >
       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
         <WhatsAppGlyph />

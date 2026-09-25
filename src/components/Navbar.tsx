@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="flex w-full max-w-[1400px] items-center justify-between rounded-full bg-cream-light/90 px-5 py-3 shadow-lg shadow-black/10 backdrop-blur-md">
         <Link to="/" className="flex shrink-0 items-center gap-2 whitespace-nowrap font-display text-lg font-bold text-ink">
           <img
-            src="/images/brand/indus-solar-mark-192.png"
+            src="/images/brand/indus-solar-mark-64.webp"
             alt="Indus Solar Solutions logo"
             className="h-8 w-8 shrink-0 rounded-full object-cover"
             width={32}

@@ -1,16 +1,47 @@
 @import "tailwindcss";
 
+/* Self-hosted variable fonts (latin subset) — replaces the render-blocking
+   Google Fonts stylesheet. The *-rupee files hold only the ₹ glyph, which
+   isn't in the latin subset. Refresh from fonts.googleapis.com if needed. */
+@font-face {
+  font-family: "Inter";
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/inter-rupee.woff2") format("woff2");
+  unicode-range: U+20B9;
+}
+@font-face {
+  font-family: "Sora";
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/sora-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Sora";
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/sora-rupee.woff2") format("woff2");
+  unicode-range: U+20B9;
+}
+
 @theme {
   --font-display: "Sora", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
-  --font-script: "Caveat", cursive;
 
   --color-cream: #f2ece0;
   --color-cream-light: #f8f4ec;
   --color-charcoal: #221f1c;
   --color-charcoal-light: #2c2824;
   --color-ink: #1a1815;
-  --color-muted: #746e63;
+  --color-muted: #655f54;
   --color-accent-light: #e8cf9f;
   --color-accent: #c9a876;
   --color-accent-dark: #8a6d3f;
@@ -47,6 +78,82 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Fade-and-rise intro for above-the-fold headings. Pure CSS so it plays
+   from the prerendered HTML at first paint instead of leaving the text
+   invisible until the JS bundle hydrates. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rise-y, 20px));
+  }
+}
+@layer components {
+  /* In a layer so [animation-delay:…] / [animation-duration:…] utilities win. */
+  .rise {
+    animation: rise 0.6s ease-out both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rise {
+      animation: none;
+    }
+  }
+
+  /* Scroll-reveal for below-the-fold sections, driven by the element's own
+     scroll position (CSS scroll-driven animations) rather than JS. Nothing is
+     hidden in the prerendered HTML, so there are no inline opacity:0 styles and
+     browsers without animation-timeline support simply show the content. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        animation: rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+      .reveal-scale {
+        animation-name: pop;
+      }
+    }
+  }
+}
+
+/* Hero slide text entering on slide change. */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+@layer components {
+  .slide-in {
+    animation: slide-in 0.6s ease-in-out both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slide-in {
+      animation: none;
+    }
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@layer components {
+  .modal-fade {
+    animation: fade 0.25s ease-out both;
+  }
+  .modal-pop {
+    animation: pop 0.3s ease-out both;
+  }
 }
 
 body {

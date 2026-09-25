@@ -9,7 +9,7 @@ top to bottom; each section unlocks the next.
       Nagar, Sabji Mandi address.
 - [ ] Set primary category to the most accurate solar-specific category
       available; add secondary categories only where genuinely applicable.
-- [ ] Fill in phone, website (indussolarsolutions.com), hours, services,
+- [ ] Fill in phone, website (https://www.indussolarsolutions.com), hours, services,
       and a description matching the site's real language — no
       exaggerated claims.
 - [ ] Upload real project photos (not stock) as they become available:
@@ -46,7 +46,7 @@ Target quality over volume — 20 genuine local links beat 2,000 spam links.
 ## 4. Search Console & Analytics
 
 - [ ] Verify the domain in Google Search Console; submit
-      `https://indussolarsolutions.com/sitemap.xml`.
+      `https://www.indussolarsolutions.com/sitemap.xml`.
 - [ ] Set up GA4 and add the measurement ID as an environment variable
       (`VITE_GA_MEASUREMENT_ID`) — not yet wired into the codebase since
       no real ID exists; wire it once the ID is available.

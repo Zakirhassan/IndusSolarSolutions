@@ -239,3 +239,38 @@ new `src/components/SizedImage.tsx` + `SizedImage.test.tsx`,
 `src/components/{BrandsMarquee,ImpactStats,Solutions,WhyChoose,WhatWeOffer,Testimonials}.tsx`,
 `src/data/{products,projects,moneyPages}.ts`,
 new `public/images/**/*.webp` (45 files, siblings of existing `.jpg`s — originals kept for OG/schema use).
+
+---
+
+## Pass 3 — 2026-09-25, audit screenshots (Links 0, Usability C-, mobile PSI 60)
+
+### Source report
+Screenshots from an audit tool: Links (0 backlinks), Usability C- (mobile
+PageSpeed 60: FCP 4.7s, LCP 6.5s, render-blocking 1.65s, image delivery 0.8s,
+multiple redirects 0.63s, unused JS 0.61s), Image Optimization, Inline Styles,
+Email Privacy, Local SEO "Missing: Address", Facebook Pixel, X/LinkedIn/YouTube
+not linked. Baseline Lighthouse mobile on the live site before this pass: perf
+53, LCP 11.5s, 2,245KB page weight.
+
+### Root causes found and fixed
+| Finding | Root cause | Fix |
+|---|---|---|
+| Image delivery / optimization | Every photo served at 1200–1600px to phones; all 5 hero slides fetched immediately. | `scripts/optimize-images.py` regenerates `name.webp` (q72) + `-480/-720/-960.webp` variants from the `.jpg` sources. `SizedImage` emits `srcset` automatically (`responsiveSrcSet`), callers pass real `sizes`. Hero slides 2–5 mount only after the window `load` event. Logo 192px PNG → 64px WebP (10KB → 1.7KB). |
+| LCP stuck behind JS | `main.tsx` used `createRoot`, discarding the prerendered HTML and re-rendering, so the hero `<img>` (LCP) waited for the whole bundle. | `hydrateRoot` when `#root` has children; `prerender.ts` now uses `renderToString` (text-node markers needed for hydration) inside `StrictMode`. |
+| Text invisible until hydration | framer-motion `initial={{opacity:0}}` was baked into prerendered HTML for above-fold headings (also 47 inline `style=` attrs). | Mount intros → CSS `.rise`; scroll reveals → CSS `.reveal` (scroll-driven `animation-timeline: view()`, content simply visible where unsupported); hero crossfade/slide text → CSS classes. framer-motion removed from the project entirely (CountUp → IntersectionObserver + rAF and now prerenders the real number; VideoModal → CSS). Bundle 162KB → 120KB gzip; homepage inline styles 47 → 0. |
+| Render-blocking requests | Google Fonts stylesheet (3 families, 12 weights; Caveat never used) + separate CSS file. | Self-hosted Sora/Inter variable fonts (latin) in `public/fonts`, preloaded; ₹ glyph isn't in latin so `*-rupee.woff2` holds only U+20B9 (subset with fontTools, 97KB → 1.8KB). `prerender.ts` inlines the Tailwind CSS (~9KB gz) into each page. |
+| Unused JS / third-party main-thread | gtag.js (~75KB) loaded eagerly. | Loaded on first interaction or 5s after `load`; queued `gtag()` calls still fire. |
+| Email Privacy | `info@` in footer, contact page and JSON-LD. | `EmailLink` renders `info [at] domain` in prerendered HTML, real `mailto:` after mount. Removed `email` from LocalBusiness schema. |
+| Address not detected | Footer address lacked PIN and semantic markup. | `<address>` element with full NAP incl. PIN 208011 (verified via pincode.net.in / goodreturns); `postalCode` added to schema; `business` in `site.ts` gains `streetAddress/city/region/postalCode`. |
+| Lighthouse a11y (found while measuring) | `text-muted` 4.3:1 on cream; WhatsApp button white on #25D366 (1.98:1); testimonial dots 8px tap targets; footer text white/40–50. | `--color-muted` → #655f54 (5.4:1); button → #15803d (5.0:1); dots get a 24px button around the visible dot; footer text → white/60. |
+
+### Verification
+- `npx tsc -b` clean, `npx vitest run` 74/74 (new: `EmailLink.test.tsx`, srcset + variant-files-exist tests in `SizedImage.test.tsx`).
+- Playwright scan of all 49 sitemap routes on the production build: 0 console errors (hydration mismatches would surface as React #418). Note: `vite preview` serves the homepage for `/x` and the real file only for `/x/` — test with trailing slash locally; Vercel serves `/x` correctly (verified on live).
+- Local Lighthouse mobile: accessibility/best-practices/SEO 100; page weight 2,245KB → 693KB. Performance score on this laptop swung 48–91 between identical runs (battery-throttled CPU) — an A/B of the scroll-reveal CSS showed no measurable difference within that noise. **Re-measure with PageSpeed Insights on the live deploy, not locally.**
+
+### Deferred / owner-only
+- Redirect chain: `http://indussolarsolutions.com` takes 2 hops (→ https apex → www). Fix with a single Cloudflare redirect rule; always audit `https://www.indussolarsolutions.com`.
+- Facebook link shows as `facebook.com/people` in the tool — display truncation, the real URL is correct (false positive). A vanity username would look cleaner.
+- X / LinkedIn / YouTube accounts, Facebook Pixel ID: need owner input.
+- Links = 0: off-site only; see `docs/seo-offsite-checklist.md`.

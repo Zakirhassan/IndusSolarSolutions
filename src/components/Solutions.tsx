@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { solutions } from "../data/site";
 import SizedImage from "./SizedImage";
 
@@ -17,36 +16,24 @@ export default function Solutions() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/35 to-black/60" />
 
       <div className="relative z-10 mx-auto max-w-2xl text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="font-display text-3xl font-bold text-white md:text-5xl"
+        <h2
+          className="reveal [--rise-y:28px] font-display text-3xl font-bold text-white md:text-5xl"
         >
           Our Solar Solutions in Kanpur
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
-          className="mt-3 text-sm text-white/75"
+        </h2>
+        <p
+          className="reveal [--rise-y:28px] mt-3 text-sm text-white/75"
         >
           From homes to factories, we design and install the right residential,
           commercial or industrial solar system for your needs across Kanpur.
-        </motion.p>
+        </p>
       </div>
 
       <div className="relative z-10 mx-auto mt-12 grid w-full max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {solutions.map((item, i) => (
-          <motion.div
+        {solutions.map((item) => (
+          <div
             key={item.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.9, delay: i * 0.12, ease: "easeOut" }}
-            className="group flex min-h-[300px] flex-col justify-between rounded-2xl bg-cream-light/90 p-8 backdrop-blur-sm transition-colors duration-500 ease-in-out hover:bg-charcoal-light hover:text-white"
+            className="reveal [--rise-y:40px] group flex min-h-[300px] flex-col justify-between rounded-2xl bg-cream-light/90 p-8 backdrop-blur-sm transition-colors duration-500 ease-in-out hover:bg-charcoal-light hover:text-white"
           >
             <div>
               <h3 className="font-display text-xl font-semibold text-ink transition-colors duration-500 ease-in-out group-hover:text-white">
@@ -62,7 +49,7 @@ export default function Solutions() {
             >
               Explore Now
             </a>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

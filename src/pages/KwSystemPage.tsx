@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { getKwSystemBySlug, getKwSystemFaqs } from "../data/kwSystems";
 import { getSeo } from "../data/seo";
 import { business } from "../data/site";
@@ -25,14 +24,11 @@ export default function KwSystemPage({ slug }: { slug: string }) {
               { name: system.h1, path: `/${system.slug}` },
             ]}
           />
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
+          <h1
+            className="rise mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
           >
             {system.h1}
-          </motion.h1>
+          </h1>
           <p className="mt-3 max-w-xl text-sm text-white/75 md:text-base">{system.intro}</p>
         </div>
       </section>

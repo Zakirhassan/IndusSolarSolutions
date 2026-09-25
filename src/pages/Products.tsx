@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { products } from "../data/products";
@@ -46,13 +45,10 @@ export default function Products() {
 
       <section className="bg-cream px-6 py-16 md:px-16">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2">
-          {products.map((p, i) => (
-            <motion.div
+          {products.map((p) => (
+            <div
+              className="reveal [--rise-y:30px]"
               key={p.slug}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
             >
               <Link
                 to={`/products/${p.slug}`}
@@ -61,6 +57,7 @@ export default function Products() {
                 <SizedImage
                   src={p.images[0]}
                   alt={p.title}
+                  sizes="(min-width: 1200px) 560px, (min-width: 640px) calc(50vw - 88px), calc(100vw - 48px)"
                   className="card-hover-img absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
@@ -74,7 +71,7 @@ export default function Products() {
                   <p className="mt-1 text-sm text-white/75">{p.tagline}</p>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>

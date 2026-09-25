@@ -1,5 +1,4 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Check, ArrowLeft } from "lucide-react";
 import { getProductBySlug } from "../data/products";
 import { business } from "../data/site";
@@ -32,14 +31,11 @@ export default function ProductDetail() {
           >
             <ArrowLeft size={14} /> All Products
           </Link>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
+          <h1
+            className="rise mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
           >
             {product.title}
-          </motion.h1>
+          </h1>
           <p className="mt-3 max-w-xl text-sm text-white/75 md:text-base">
             {product.tagline}
           </p>
@@ -76,6 +72,7 @@ export default function ProductDetail() {
             <SizedImage
               src={product.images[1]}
               alt={product.title}
+              sizes="(min-width: 768px) 560px, 100vw"
               className="h-full w-full object-cover"
             />
           </div>

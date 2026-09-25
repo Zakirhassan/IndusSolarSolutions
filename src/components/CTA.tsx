@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { business } from "../data/site";
 
 function PanelSketch({ flip = false }: { flip?: boolean }) {
@@ -31,28 +30,20 @@ export default function CTA() {
         <PanelSketch flip />
       </div>
 
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 max-w-2xl font-display text-3xl font-bold text-ink md:text-5xl"
+      <h2
+        className="reveal relative z-10 max-w-2xl font-display text-3xl font-bold text-ink md:text-5xl"
       >
         Ready to Embrace a Greener Future?
-      </motion.h2>
+      </h2>
 
-      <motion.a
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.6, delay: 0.15 }}
+      <a
         href={business.whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="relative z-10 mt-8 rounded-full bg-charcoal px-7 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03]"
+        className="reveal relative z-10 mt-8 rounded-full bg-charcoal px-7 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03]"
       >
         Explore Our Solar Solutions
-      </motion.a>
+      </a>
     </section>
   );
 }

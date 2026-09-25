@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { offerItems } from "../data/site";
@@ -11,25 +10,18 @@ export default function WhatWeOffer() {
         <div className="text-xs font-semibold uppercase tracking-widest text-muted">
           What We Offer
         </div>
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto mt-3 max-w-2xl font-display text-3xl font-bold text-ink md:text-5xl"
+        <h2
+          className="reveal [--rise-y:24px] mx-auto mt-3 max-w-2xl font-display text-3xl font-bold text-ink md:text-5xl"
         >
           Customized Solar Panel Installation Solutions in Kanpur
-        </motion.h2>
+        </h2>
       </div>
 
       <div className="mx-auto mt-12 grid w-full max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2">
-        {offerItems.map((item, i) => (
-          <motion.div
+        {offerItems.map((item) => (
+          <div
+            className="reveal [--rise-y:30px]"
             key={item.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
           >
             <Link
               to={item.href}
@@ -39,6 +31,7 @@ export default function WhatWeOffer() {
                 src={item.image}
                 alt={item.title}
                 loading="lazy"
+                sizes="(min-width: 1200px) 560px, (min-width: 640px) calc(50vw - 88px), calc(100vw - 48px)"
                 className="card-hover-img absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
@@ -52,7 +45,7 @@ export default function WhatWeOffer() {
                 <p className="mt-1 text-sm text-white/75">{item.body}</p>
               </div>
             </Link>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

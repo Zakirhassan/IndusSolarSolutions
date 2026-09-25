@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { business, impact, whyChoose } from "../data/site";
 import { getSeo } from "../data/seo";
 import Seo from "../components/Seo";
@@ -19,14 +18,11 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         <div className="relative z-10 mx-auto w-full max-w-6xl">
           <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
+          <h1
+            className="rise mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
           >
             About Indus Solar Solutions
-          </motion.h1>
+          </h1>
         </div>
       </section>
 
@@ -34,7 +30,7 @@ export default function About() {
         <div className="mx-auto max-w-3xl">
           <p className="text-sm leading-relaxed text-muted md:text-base">
             Indus Solar Solutions is a Kanpur-based solar panel installation company run by {business.owner},
-            serving homes, shops and factories in {business.address}. We started small and grew through repeat
+            serving homes, shops and factories across Kanpur from our office in {business.streetAddress}. We started small and grew through repeat
             business and referrals — {impact.heading.toLowerCase()} reflects that: {impact.stats[0].value}
             {impact.stats[0].suffix} projects completed in {impact.stats[1].value} months of operation, all
             handled locally from consultation to after-sales support. Our installation crews work hands-on in and

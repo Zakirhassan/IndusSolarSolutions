@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { getLocalityBySlug, getTestimonialsForLocality, getProjectsForLocality } from "../data/localities";
 import { getSeo } from "../data/seo";
@@ -30,14 +29,11 @@ export default function LocalityPage({ slug }: { slug: string }) {
               { name: locality.name, path: `/${locality.slug}` },
             ]}
           />
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
+          <h1
+            className="rise mt-4 max-w-2xl font-display text-3xl font-bold text-white md:text-5xl"
           >
             {locality.h1}
-          </motion.h1>
+          </h1>
         </div>
       </section>
 
@@ -64,7 +60,7 @@ export default function LocalityPage({ slug }: { slug: string }) {
               {localProjects.map((p) => (
                 <div key={p.title} className="overflow-hidden rounded-2xl bg-white shadow-md">
                   <div className="aspect-[4/3] overflow-hidden">
-                    <SizedImage src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-cover" />
+                    <SizedImage src={p.image} alt={p.title} loading="lazy" sizes="(min-width: 640px) 50vw, 100vw" className="h-full w-full object-cover" />
                   </div>
                   <div className="p-4">
                     <div className="font-display text-sm font-semibold text-ink">{p.title}</div>
@@ -87,7 +83,7 @@ export default function LocalityPage({ slug }: { slug: string }) {
                   <Quote size={22} className="text-accent-dark" fill="currentColor" />
                   <p className="mt-3 text-sm leading-relaxed text-ink/85">{t.quote}</p>
                   <div className="mt-4 flex items-center gap-3">
-                    <SizedImage src={t.image} alt={t.name} loading="lazy" className="h-10 w-10 rounded-full object-cover" />
+                    <SizedImage src={t.image} alt={t.name} loading="lazy" sizes="40px" className="h-10 w-10 rounded-full object-cover" />
                     <div>
                       <div className="font-display text-sm font-semibold text-ink">{t.name}</div>
                       <div className="text-xs text-muted">{t.role}</div>

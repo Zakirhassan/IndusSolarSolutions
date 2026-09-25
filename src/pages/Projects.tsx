@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 import { projects } from "../data/projects";
@@ -30,16 +29,13 @@ export default function Projects() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2">
           {projects.map((p, i) => (
             <Link key={`${p.title}-${i}`} to={`/projects/${p.slug}`}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
-                className="group relative aspect-[16/11] overflow-hidden rounded-2xl shadow-md"
+              <div
+                className="reveal [--rise-y:30px] group relative aspect-[16/11] overflow-hidden rounded-2xl shadow-md"
               >
                 <SizedImage
                   src={p.image}
                   alt={p.title}
+                  sizes="(min-width: 1200px) 560px, (min-width: 640px) calc(50vw - 88px), calc(100vw - 48px)"
                   className="card-hover-img absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
@@ -51,7 +47,7 @@ export default function Projects() {
                     <MapPin size={13} /> {p.location}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </Link>
           ))}
         </div>

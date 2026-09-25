@@ -1,5 +1,4 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
 import { getBlogArticleBySlug } from "../data/blog";
 import { getSeo } from "../data/seo";
 import Seo from "../components/Seo";
@@ -24,14 +23,11 @@ export default function BlogArticlePage() {
               { name: article.h1, path: `/blog/${article.slug}` },
             ]}
           />
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mt-4 font-display text-3xl font-bold text-white md:text-5xl"
+          <h1
+            className="rise mt-4 font-display text-3xl font-bold text-white md:text-5xl"
           >
             {article.h1}
-          </motion.h1>
+          </h1>
           <p className="mt-3 text-xs text-white/60">
             By {article.author} · Last updated {article.lastUpdated}
           </p>

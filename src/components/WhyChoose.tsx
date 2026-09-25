@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { whyChoose } from "../data/site";
 import SizedImage from "./SizedImage";
 
@@ -13,57 +12,43 @@ export default function WhyChoose() {
           <div className="text-xs font-semibold uppercase tracking-widest text-muted">
             Who We Are
           </div>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6 }}
-            className="mt-3 font-display text-3xl font-bold text-ink md:text-5xl"
+          <h2
+            className="reveal [--rise-y:24px] mt-3 font-display text-3xl font-bold text-ink md:text-5xl"
           >
             Why Choose Indus Solar Solutions in Kanpur?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-md text-sm text-muted"
+          </h2>
+          <p
+            className="reveal [--rise-y:24px] mt-4 max-w-md text-sm text-muted"
           >
             There are many significant benefits to installing solar panels with a
             trusted solar company in Kanpur — financial and environmental, both.
-          </motion.p>
+          </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl"
+        <div
+          className="reveal reveal-scale relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl"
         >
           <SizedImage
             src="/images/why-choose/engineer.webp"
             alt="Indus Solar Solutions engineer at a solar installation"
             loading="lazy"
+            sizes="(min-width: 768px) 560px, 100vw"
             className="absolute inset-0 h-full w-full object-cover"
           />
-        </motion.div>
+        </div>
       </div>
 
       <div className="mx-auto mt-14 w-full max-w-6xl border-t border-ink/10" />
 
       <div className="mx-auto mt-10 grid w-full max-w-6xl grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3">
-        {whyChoose.map((item, i) => (
-          <motion.div
+        {whyChoose.map((item) => (
+          <div
+            className="reveal [--rise-y:24px]"
             key={item.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
           >
             <h3 className="font-display text-lg font-semibold text-ink">{item.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

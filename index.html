@@ -8,17 +8,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Kanpur's trusted solar panel installation company — residential, commercial & industrial rooftop solar, subsidy assistance, batteries and maintenance." />
     <link rel="canonical" href="https://www.indussolarsolutions.com/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin />
     <title>Indus Solar Solutions | Best Solar Company in Kanpur</title>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4KYLV0HCJ"></script>
+    <!-- Google tag (gtag.js). Its ~75KB script loads on the visitor's first
+         interaction, or 5s after page load, so it doesn't compete with the
+         hero image or block the main thread. Queued gtag() calls still fire. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-R4KYLV0HCJ");
+      (function () {
+        var events = ["scroll", "pointerdown", "keydown", "touchstart"];
+        var loaded = false;
+        function loadGtag() {
+          if (loaded) return;
+          loaded = true;
+          events.forEach(function (e) { window.removeEventListener(e, loadGtag); });
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-R4KYLV0HCJ";
+          document.head.appendChild(s);
+        }
+        events.forEach(function (e) { window.addEventListener(e, loadGtag, { once: true, passive: true }); });
+        window.addEventListener("load", function () { setTimeout(loadGtag, 5000); });
+      })();
     </script>
 
     <meta property="og:type" content="website" />
@@ -43,7 +59,6 @@
         "logo": "https://www.indussolarsolutions.com/images/brand/indus-solar-logo-full.jpg",
         "url": "https://www.indussolarsolutions.com/",
         "telephone": "+919336331925",
-        "email": "info@indussolarsolutions.com",
         "priceRange": "₹₹",
         "sameAs": [
           "https://www.instagram.com/indus_solarofficial",
@@ -54,6 +69,7 @@
           "streetAddress": "O Block, Sabji Mandi, Kidwai Nagar",
           "addressLocality": "Kanpur",
           "addressRegion": "Uttar Pradesh",
+          "postalCode": "208011",
           "addressCountry": "IN"
         },
         "areaServed": [

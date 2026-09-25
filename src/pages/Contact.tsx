@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { business } from "../data/site";
 import { getSeo } from "../data/seo";
 import Seo from "../components/Seo";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
+import EmailLink from "../components/EmailLink";
 
 export default function Contact() {
   return (
@@ -13,14 +13,11 @@ export default function Contact() {
       <section className="bg-charcoal px-6 pb-10 pt-32 md:px-16 md:pb-14 md:pt-40">
         <div className="mx-auto max-w-6xl">
           <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mt-4 font-display text-3xl font-bold text-white md:text-5xl"
+          <h1
+            className="rise mt-4 font-display text-3xl font-bold text-white md:text-5xl"
           >
             Contact Indus Solar Solutions
-          </motion.h1>
+          </h1>
         </div>
       </section>
 
@@ -34,10 +31,15 @@ export default function Contact() {
             <Phone size={22} className="mx-auto text-accent-dark" />
             <div className="mt-3 text-sm text-ink">+91 {business.phone}</div>
           </a>
-          <a href={`mailto:${business.email}`} className="rounded-2xl bg-white p-6 text-center shadow-md">
-            <Mail size={22} className="mx-auto text-accent-dark" />
-            <div className="mt-3 text-sm text-ink">{business.email}</div>
-          </a>
+          <EmailLink
+            className="rounded-2xl bg-white p-6 text-center shadow-md"
+            render={(address) => (
+              <>
+                <Mail size={22} className="mx-auto text-accent-dark" />
+                <div className="mt-3 text-sm text-ink">{address}</div>
+              </>
+            )}
+          />
         </div>
 
         <div className="mx-auto mt-10 max-w-md">

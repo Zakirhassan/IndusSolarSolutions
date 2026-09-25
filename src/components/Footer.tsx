@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { business } from "../data/site";
 import { localities } from "../data/localities";
+import EmailLink from "./EmailLink";
 
 export default function Footer() {
   const [sent, setSent] = useState(false);
@@ -23,7 +24,7 @@ export default function Footer() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5">
             <img
-              src="/images/brand/indus-solar-mark-192.png"
+              src="/images/brand/indus-solar-mark-64.webp"
               alt="Indus Solar Solutions logo"
               className="h-6 w-6 rounded-full object-cover"
               width={24}
@@ -44,10 +45,13 @@ export default function Footer() {
             Kanpur-based, proudly serving clients across India.
           </p>
 
-          <div className="mt-10 space-y-4 text-sm text-white/70">
+          <address className="mt-10 space-y-4 text-sm not-italic text-white/70">
             <div className="flex items-start gap-3">
               <MapPin size={18} className="mt-0.5 shrink-0 text-accent-light" />
-              <span>{business.address}</span>
+              <span>
+                {business.name}, {business.streetAddress}, {business.city}, {business.region}{" "}
+                {business.postalCode}, India
+              </span>
             </div>
             <div className="flex items-center gap-3">
               <Phone size={18} className="shrink-0 text-accent-light" />
@@ -55,13 +59,13 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <Mail size={18} className="shrink-0 text-accent-light" />
-              <a href={`mailto:${business.email}`}>{business.email}</a>
+              <EmailLink />
             </div>
-          </div>
+          </address>
 
           <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
             <div>
-              <div className="text-xs font-medium uppercase tracking-widest text-white/50">
+              <div className="text-xs font-medium uppercase tracking-widest text-white/60">
                 Solar Solutions
               </div>
               <div className="mt-3 flex flex-col gap-2 text-sm text-white/70">
@@ -72,7 +76,7 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <div className="text-xs font-medium uppercase tracking-widest text-white/50">
+              <div className="text-xs font-medium uppercase tracking-widest text-white/60">
                 Solar Resources
               </div>
               <div className="mt-3 flex flex-col gap-2 text-sm text-white/70">
@@ -84,7 +88,7 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <div className="text-xs font-medium uppercase tracking-widest text-white/50">
+              <div className="text-xs font-medium uppercase tracking-widest text-white/60">
                 Service Areas
               </div>
               <div className="mt-3 flex flex-col gap-2 text-sm text-white/70">
@@ -96,7 +100,7 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <div className="text-xs font-medium uppercase tracking-widest text-white/50">
+              <div className="text-xs font-medium uppercase tracking-widest text-white/60">
                 Company
               </div>
               <div className="mt-3 flex flex-col gap-2 text-sm text-white/70">
@@ -167,7 +171,10 @@ export default function Footer() {
         </form>
       </div>
 
-      <div className="mx-auto mt-16 max-w-6xl border-t border-white/10 pt-6 text-center text-xs text-white/40">
+      <div
+        suppressHydrationWarning
+        className="mx-auto mt-16 max-w-6xl border-t border-white/10 pt-6 text-center text-xs text-white/60"
+      >
         © {new Date().getFullYear()} Indus Solar Solutions. All rights reserved.
       </div>
     </footer>

@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import React, { StrictMode } from "react";
+import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router";
 import AppShell from "../src/AppShell";
 import { SITE_URL, DEFAULT_IMAGE, allSeo, type SeoEntry } from "../src/data/seo";
@@ -13,7 +13,16 @@ if (!fs.existsSync(templatePath)) {
   throw new Error(`${templatePath} not found — run "vite build" before prerendering.`);
 }
 
-const template = fs.readFileSync(templatePath, "utf-8");
+// Inline the (single, ~9KB gzipped) Tailwind stylesheet so first paint doesn't
+// wait on a separate render-blocking CSS request.
+function inlineStylesheets(html: string) {
+  return html.replace(/<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/g, (_, href: string) => {
+    const css = fs.readFileSync(path.join(distDir, href), "utf-8");
+    return `<style>${css}</style>`;
+  });
+}
+
+const template = inlineStylesheets(fs.readFileSync(templatePath, "utf-8"));
 
 function absoluteImage(image: string | undefined) {
   const src = image ?? DEFAULT_IMAGE;
@@ -55,8 +64,11 @@ function stripLeakedHeadTags(html: string) {
 }
 
 for (const entry of allSeo) {
-  const rawAppHtml = renderToStaticMarkup(
-    React.createElement(StaticRouter, { location: entry.path }, React.createElement(AppShell))
+  // renderToString (not renderToStaticMarkup) keeps the text-node markers
+  // hydrateRoot in src/main.tsx needs to match the markup up.
+  const rawAppHtml = renderToString(
+    React.createElement(StrictMode, null,
+      React.createElement(StaticRouter, { location: entry.path }, React.createElement(AppShell)))
   );
   const appHtml = stripLeakedHeadTags(rawAppHtml);
 
