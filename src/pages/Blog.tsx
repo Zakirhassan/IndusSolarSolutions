@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { blogArticles } from "../data/blog";
+import { blogArticles, blogAuthors, readingMinutes } from "../data/blog";
 import { getSeo } from "../data/seo";
 import Seo from "../components/Seo";
 import Breadcrumbs from "../components/Breadcrumbs";
@@ -28,6 +28,11 @@ export default function Blog() {
             >
               <div className="font-display text-lg font-semibold text-ink">{article.h1}</div>
               <p className="mt-2 text-sm text-muted">{article.metaDescription}</p>
+              <p className="mt-4 text-xs text-muted">
+                {blogAuthors[article.author].name} · Updated{" "}
+                <time dateTime={article.lastUpdated}>{article.lastUpdated}</time> · {readingMinutes(article)} min
+                read
+              </p>
             </Link>
           ))}
         </div>

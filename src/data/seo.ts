@@ -3,9 +3,9 @@ import { projects } from "./projects";
 import { moneyPages } from "./moneyPages";
 import { kwSystems } from "./kwSystems";
 import { localities, getTestimonialsForLocality, getProjectsForLocality } from "./localities";
-import { blogArticles } from "./blog";
+import { blogArticles, blogAuthors } from "./blog";
 import { faqs, getFaqsBySlug } from "./faqs";
-import { breadcrumbSchema, serviceSchema, faqSchema, type JsonLd } from "../lib/schema";
+import { articleSchema, breadcrumbSchema, serviceSchema, faqSchema, type JsonLd } from "../lib/schema";
 
 export const SITE_URL = "https://www.indussolarsolutions.com";
 export const DEFAULT_IMAGE = "/images/hero/hero-2b-adlershof.jpg";
@@ -170,11 +170,23 @@ export const blogSeo: SeoEntry[] = blogArticles.map((a) => ({
   path: `/blog/${a.slug}`,
   title: a.title,
   description: a.metaDescription,
-  schema: breadcrumbSchema([
-    { name: "Home", path: "/" },
-    { name: "Blog", path: "/blog" },
-    { name: a.h1, path: `/blog/${a.slug}` },
-  ]),
+  schema: [
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: a.h1, path: `/blog/${a.slug}` },
+    ]),
+    articleSchema({
+      headline: a.h1,
+      description: a.metaDescription,
+      path: `/blog/${a.slug}`,
+      image: DEFAULT_IMAGE,
+      datePublished: a.publishedDate,
+      dateModified: a.lastUpdated,
+      author: blogAuthors[a.author],
+    }),
+    faqSchema(a.faqs),
+  ],
 }));
 
 export const projectSeo: SeoEntry[] = projects.map((p) => ({

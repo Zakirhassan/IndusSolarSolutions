@@ -19,12 +19,16 @@ describe("allSeo", () => {
     expect(paths).toContain("/blog/solar-panel-cost-kanpur-guide");
   });
 
-  it("only the /faq entry carries FAQPage schema", () => {
+  it("FAQPage schema only on /faq and blog posts, and no question is marked up twice", () => {
+    const seen = new Map<string, string>();
     for (const entry of allSeo) {
       const schemas = Array.isArray(entry.schema) ? entry.schema : entry.schema ? [entry.schema] : [];
-      const hasFaqSchema = schemas.some((s) => s["@type"] === "FAQPage");
-      if (hasFaqSchema) {
-        expect(entry.path).toBe("/faq");
+      for (const s of schemas.filter((s) => s["@type"] === "FAQPage")) {
+        expect(entry.path === "/faq" || entry.path.startsWith("/blog/"), entry.path).toBe(true);
+        for (const q of s.mainEntity as { name: string }[]) {
+          expect(seen.get(q.name), `"${q.name}" on ${entry.path}`).toBeUndefined();
+          seen.set(q.name, entry.path);
+        }
       }
     }
   });
