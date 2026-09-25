@@ -37,35 +37,34 @@ export const blogArticles: BlogArticle[] = [
     slug: "solar-panel-cost-kanpur-guide",
     title: "Solar Panel Cost in Kanpur 2026: Price After Subsidy",
     metaDescription:
-      "A 3kW rooftop system in Kanpur costs ₹1.65–1.95 lakh before subsidy and about ₹57,000–87,000 after the ₹1.08 lakh subsidy. How to read a quote.",
+      "Our Kanpur prices: 3kW rooftop solar for ₹1.65–1.95 lakh before subsidy, about ₹57,000–87,000 after the ₹1.08 lakh subsidy. What changes the price.",
     h1: "Solar Panel Cost in Kanpur (2026)",
     publishedDate: "2026-09-13",
     lastUpdated: "2026-09-25",
     author: "abul",
     shortAnswer:
-      "A 3kW on-grid rooftop system in Kanpur is priced at roughly ₹1.65–1.95 lakh before subsidy in 2026. Homes can claim up to ₹78,000 from PM Surya Ghar plus up to ₹30,000 from UPNEDA, which brings the net cost to about ₹57,000–87,000. The subsidy is paid into your bank account after commissioning, so you pay the full amount first.",
+      "We install a 3kW on-grid rooftop system in Kanpur for ₹1.65–1.95 lakh before subsidy, and 1–2kW systems at about ₹70,000 per kW. Homes can claim up to ₹78,000 from PM Surya Ghar plus up to ₹30,000 from UPNEDA, so a 3kW system nets out at ₹57,000–87,000. You pay the full price first and the subsidy follows commissioning.",
     sections: [
       {
-        heading: "Price by system size, before and after subsidy",
+        heading: "Our prices, before and after subsidy",
         blocks: [
           {
             type: "p",
-            text: "The subsidy is fixed per household, not a percentage of the price, so it covers a bigger share of a small system. Above 3kW it stops growing.",
+            text: "The subsidy is fixed per household, not a percentage of the price. It is ₹30,000 per kW for the first 2kW and ₹18,000 for the 3rd kW from PM Surya Ghar, plus ₹15,000 per kW up to ₹30,000 from UPNEDA. Above 3kW it stops growing.",
           },
           {
             type: "table",
-            caption: "Residential subsidy available in Kanpur by system size (2026)",
-            head: ["System", "PM Surya Ghar (central)", "UPNEDA (state)", "Total subsidy"],
+            caption: "Indus Solar Solutions installed prices for homes in Kanpur (on-grid, 2026)",
+            head: ["System", "Our price", "Total subsidy", "You pay after subsidy"],
             rows: [
-              ["1kW", "₹30,000", "₹15,000", "₹45,000"],
-              ["2kW", "₹60,000", "₹30,000", "₹90,000"],
-              ["3kW", "₹78,000", "₹30,000", "₹1,08,000"],
-              ["5kW", "₹78,000", "₹30,000", "₹1,08,000"],
+              ["1kW", "about ₹70,000", "₹45,000", "about ₹25,000"],
+              ["2kW", "about ₹1,40,000", "₹90,000", "about ₹50,000"],
+              ["3kW", "₹1,65,000–1,95,000", "₹1,08,000", "₹57,000–87,000"],
             ],
           },
           {
             type: "p",
-            text: "For a 3kW system, installer price lists published for Kanpur in 2026 sit between ₹1.65 lakh and ₹1.95 lakh installed. Take away ₹1.08 lakh and the net cost is ₹57,000 to ₹87,000. Treat these as market figures to compare quotes against; your own number depends on the roof and the parts chosen. You can estimate your size and savings with our [solar calculator](/solar-calculator-kanpur).",
+            text: "Small systems cost more per kW because the inverter, structure, wiring and paperwork cost nearly the same at any size. That is why 3kW works out cheaper per kW than 1kW. Where your 3kW price lands in the range depends on the roof and the parts chosen, covered below. You can estimate your size and savings with our [solar calculator](/solar-calculator-kanpur).",
           },
         ],
       },
@@ -127,7 +126,7 @@ export const blogArticles: BlogArticle[] = [
       {
         question: "How much does a 3kW solar system cost in Kanpur after subsidy?",
         answer:
-          "About ₹57,000–87,000 in 2026, based on installed prices of ₹1.65–1.95 lakh minus the ₹1.08 lakh combined PM Surya Ghar and UPNEDA subsidy.",
+          "About ₹57,000–87,000 in 2026. Our installed price for 3kW is ₹1.65–1.95 lakh, minus the ₹1.08 lakh combined PM Surya Ghar and UPNEDA subsidy.",
       },
       {
         question: "Is the subsidy deducted from the price upfront?",
@@ -142,7 +141,7 @@ export const blogArticles: BlogArticle[] = [
     sources: [
       { label: "PM Surya Ghar Muft Bijli Yojana: official portal", url: "https://pmsuryaghar.gov.in/" },
       { label: "UPNEDA: Uttar Pradesh New and Renewable Energy Development Agency", url: "https://upneda.org.in/" },
-      { label: "3kW system price in UP, city-wise (SolarSahi, 2026)", url: "https://solarsahi.com/learn/pricing-and-roi/3kw-solar-system-price-uttar-pradesh/" },
+      { label: "Market comparison: 3kW system prices in UP, city-wise (SolarSahi, 2026)", url: "https://solarsahi.com/learn/pricing-and-roi/3kw-solar-system-price-uttar-pradesh/" },
       { label: "DCR vs non-DCR panels: subsidy rules and cost (Bridgeway Power, 2026)", url: "https://bridgewaypower.in/blog/dcr-vs-non-dcr-solar-panel-subsidy" },
     ],
   },
@@ -192,7 +191,7 @@ export const blogArticles: BlogArticle[] = [
         blocks: [
           {
             type: "p",
-            text: "Installed prices for 3kW in Kanpur run ₹1.65–1.95 lakh in 2026. After the combined ₹1.08 lakh subsidy, you are left with ₹57,000–87,000. At ₹24,700 a year saved, that is recovered in about 2.3 to 3.5 years. The prices and subsidy are explained in our [solar panel cost guide](/blog/solar-panel-cost-kanpur-guide).",
+            text: "Our installed price for 3kW is ₹1.65–1.95 lakh in 2026. After the combined ₹1.08 lakh subsidy, you are left with ₹57,000–87,000. At ₹24,700 a year saved, that is recovered in about 2.3 to 3.5 years. The prices and subsidy are explained in our [solar panel cost guide](/blog/solar-panel-cost-kanpur-guide).",
           },
           {
             type: "note",
