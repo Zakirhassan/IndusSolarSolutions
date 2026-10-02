@@ -52,6 +52,11 @@ build fails if a post breaks them, so fix the writing rather than the test.
 
 ## Banned words (tested)
 
+The list lives in `src/data/bannedPhrases.ts`. It applies to blog posts and to
+all other site copy (`src/data/siteCopy.test.ts`), except testimonials, which
+are customers' own words.
+
+
 honest/honestly, delve, navigate, journey, unlock, seamless, robust, leverage,
 game-changer, comprehensive, "in today's", "it's worth noting", furthermore,
 moreover, "whether you're", "look no further", embark, elevate, landscape,
@@ -77,7 +82,7 @@ input** can't be written well without real data from our own jobs.
 
 | Week | Post (target search) | Links to |
 |---|---|---|
-| 1 | KESCO net metering in Kanpur: forms, meter cost, timeline | /solar-subsidy-kanpur |
+| 1 | ✅ KESCO net metering in Kanpur: how billing works (published 2026-10-02) | /blog/kesco-net-metering-kanpur |
 | 2 | 3kW vs 5kW for a Kanpur home: which size for your bill | /3kw-solar-system-kanpur, /5kw-solar-system-kanpur |
 | 3 | Case study: a 3kW install in Kidwai Nagar, bills before and after. **Needs owner input:** a real customer's 12 months of KESCO bills and permission | /solar-panel-installation-kidwai-nagar |
 | 4 | DCR vs non-DCR panels: what it means for your subsidy | /blog/solar-panel-cost-kanpur-guide |

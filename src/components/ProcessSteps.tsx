@@ -17,8 +17,8 @@ export default function ProcessSteps() {
         <p
           className="reveal [--rise-y:28px] max-w-sm text-sm text-muted"
         >
-          We make switching to solar easy with a clear, hassle-free process designed
-          to save you time, money, and energy.
+          Four steps from the first call to a working system. We handle the KESCO
+          and subsidy paperwork along the way.
         </p>
       </div>
 

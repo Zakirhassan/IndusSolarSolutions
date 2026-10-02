@@ -1,20 +1,10 @@
 import { describe, it, expect } from "vitest";
 import { blogArticles, getBlogArticleBySlug, type BlogArticle } from "./blog";
 import { allSeo } from "./seo";
+import { findBannedPhrases } from "./bannedPhrases";
 
 // Enforces docs/blog-style-guide.md. If a rule here fails, fix the writing,
 // don't loosen the rule.
-
-// Filler that makes posts read as machine-written or salesy.
-const BANNED = [
-  "honest", "honestly", "delve", "navigate", "navigating", "journey", "unlock",
-  "seamless", "robust", "leverage", "game-changer", "game changer", "comprehensive",
-  "in today's", "it's worth noting", "it is worth noting", "furthermore", "moreover",
-  "whether you're", "look no further", "embark", "elevate", "landscape", "tapestry",
-  "in conclusion", "ever-evolving", "harness the power", "peace of mind", "cutting-edge",
-  "state-of-the-art", "hassle-free", "stress-free", "complete guide", "ultimate guide",
-  "a testament to", "rest assured", "one-stop", "world-class", "best-in-class",
-];
 
 function allText(a: BlogArticle): string[] {
   return [
@@ -48,9 +38,7 @@ describe("blogArticles", () => {
 
   describe.each(blogArticles.map((a) => [a.slug, a] as const))("%s", (_slug, a) => {
     it("uses no banned filler phrases", () => {
-      const text = allText(a).join(" ").toLowerCase();
-      const hits = BANNED.filter((p) => new RegExp(`\\b${p.replace(/[-']/g, "[-' ]?")}\\b`).test(text));
-      expect(hits).toEqual([]);
+      expect(findBannedPhrases(allText(a).join(" "))).toEqual([]);
     });
 
     it("fits Google's title and description limits", () => {

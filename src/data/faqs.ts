@@ -33,7 +33,7 @@ export const faqs: FaqEntry[] = [
     slug: "worth-it",
     question: "Is solar worth installing in Kanpur?",
     answer:
-      "Kanpur gets strong sun exposure for most of the year, and with rising grid tariffs, rooftop solar typically pays back its cost within a few years for homes and businesses with a reasonably sunny roof. See our full guide for an honest breakdown.",
+      "For most homes using 300 units or more a month, yes. On the KESCO tariff, a 3kW system cuts a 400-unit bill from about ₹2,840 to about ₹780 a month, and after the ₹1.08 lakh subsidy the net cost is usually recovered in 2.3 to 3.5 years. Our guide on whether rooftop solar is worth it in Kanpur shows the full working.",
   },
   {
     slug: "subsidy-amount",

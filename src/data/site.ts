@@ -169,23 +169,23 @@ export const solutions = [
 export const process = [
   {
     title: "Free Consultation",
-    body: "Our experts assess your home or business energy needs, roof space, and budget to design a solar plan tailored just for you.",
-    tags: ["Expert Guidance", "Site Visit"],
+    body: "We visit your home or business, check the roof for space and shade, and go through your last 12 KESCO bills to work out the right system size.",
+    tags: ["Free Site Visit", "Bill Check"],
   },
   {
     title: "Custom Design",
-    body: "We create a solar system layout that maximizes efficiency and blends seamlessly with your property.",
-    tags: ["Smart Layout", "High Efficiency"],
+    body: "We place the panels clear of shade from water tanks and parapets, and set the tilt and structure height to suit your roof.",
+    tags: ["Shade-Free Layout", "Right Tilt"],
   },
   {
     title: "Professional Installation",
-    body: "Our certified technicians install your solar panels quickly and safely, ensuring top-quality performance from day one.",
-    tags: ["Hassle-Free Setup", "Certified Team"],
+    body: "Our technicians fit the structure, panels, inverter, earthing and lightning arrester, then we apply for your KESCO net meter.",
+    tags: ["Own Team", "Net Meter Filed"],
   },
   {
     title: "Save & Enjoy",
-    body: "Once your system is live, you start lowering your electricity bills and enjoying reliable, clean energy.",
-    tags: ["Lower Bills", "Clean Energy"],
+    body: "Once KESCO fits the net meter, every unit your panels make comes off your bill. We also file your subsidy claim.",
+    tags: ["Lower Bills", "Subsidy Filed"],
   },
 ];
 

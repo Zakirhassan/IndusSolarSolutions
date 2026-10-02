@@ -208,7 +208,7 @@ export const blogArticles: BlogArticle[] = [
               "Low usage. At 100–150 units a month you pay the cheapest ₹5.50 slab, so each unit saved is worth less, and payback gets closer to 5–6 years.",
               "Shade. A water tank, a neighbour's taller building or a tree across the panels in the afternoon can cut output far more than the shaded area suggests.",
               "No usable roof. Rented flats and shared terraces need written permission from the owner or society before a net meter will be approved.",
-              "Oversizing. Surplus units left at the end of the financial year are paid at roughly ₹3–3.6 a unit, far below what you pay to buy. Size the system to your usage, not your roof.",
+              "Oversizing. Surplus units left at the end of the financial year are paid at roughly ₹3–3.6 a unit, far below what you pay to buy. Size the system to your usage, not your roof. Our [KESCO net metering guide](/blog/kesco-net-metering-kanpur) shows how the credit works.",
             ],
           },
         ],
@@ -283,7 +283,7 @@ export const blogArticles: BlogArticle[] = [
               "Register on [pmsuryaghar.gov.in](https://pmsuryaghar.gov.in/): select Uttar Pradesh, then KESCO as your DISCOM, and enter your consumer number.",
               "Apply for rooftop solar on the portal. KESCO checks technical feasibility against your sanctioned load and approves or asks for changes, usually in 15–30 days.",
               "Choose a vendor registered on the portal and get the system installed with DCR panels. Non-DCR panels make the application ineligible.",
-              "Submit installation details and apply for the net meter through the portal.",
+              "Submit installation details and apply for the net meter through the portal. How the net meter bills you is explained in our [KESCO net metering guide](/blog/kesco-net-metering-kanpur).",
               "KESCO inspects the installation, fits the net meter and issues the commissioning report.",
               "Enter your bank details on the portal. The central subsidy is paid directly into your account, not through the installer.",
             ],
@@ -355,6 +355,134 @@ export const blogArticles: BlogArticle[] = [
       { label: "UPNEDA: Uttar Pradesh New and Renewable Energy Development Agency", url: "https://upneda.org.in/" },
       { label: "Non-DCR panels under the 'Give It Up' option (Saur Energy)", url: "https://www.saurenergy.com/solar-energy-news/non-dcr-solar-panels-can-be-used-under-pm-surya-ghar-under-give-it-up-option-mnre-12016430" },
       { label: "UPPCL net metering process and timelines (Quickest Solar)", url: "https://quickestimate.co/blog/upcl-uppcl-net-metering-guide" },
+    ],
+  },
+  {
+    slug: "kesco-net-metering-kanpur",
+    title: "KESCO Net Metering in Kanpur: How It Works (2026)",
+    metaDescription:
+      "How KESCO net metering bills a Kanpur home with rooftop solar: monthly netting, credits carried forward, the year-end payout rate and how to size your system.",
+    h1: "KESCO Net Metering in Kanpur: How It Works",
+    publishedDate: "2026-10-02",
+    lastUpdated: "2026-10-02",
+    author: "abul",
+    shortAnswer:
+      "A net meter records units you take from the KESCO grid and units your panels send back. Each month you are billed only for the difference. Spare units carry forward to later months, and whatever is left at the end of the financial year is paid at about ₹3 a unit. That is roughly half what a unit costs you to buy, so size the system to your own use.",
+    sections: [
+      {
+        heading: "What the net meter does",
+        blocks: [
+          {
+            type: "p",
+            text: "Your normal KESCO meter is swapped for a bi-directional (net) meter. It keeps two readings: import, the units you draw from the grid, and export, the units your panels push into the grid when they make more than the house is using.",
+          },
+          {
+            type: "p",
+            text: "Panels produce most between about 10am and 3pm. If nobody is home, most of that goes out as export. In the evening you import. Net metering lets the daytime export pay for the evening import, so you don't need a battery to use your own solar power.",
+          },
+        ],
+      },
+      {
+        heading: "How your monthly bill is worked out",
+        blocks: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "KESCO subtracts export from import for the month.",
+              "If import is higher, you pay for the difference at the normal slab rates: ₹5.50 a unit up to 150 units, ₹6.00 up to 300 and ₹6.50 above that.",
+              "If export is higher, you pay no energy charge and the spare units are banked as a credit for the next month.",
+              "The fixed charge of ₹110 per kW of sanctioned load and the 5% duty apply every month either way.",
+            ],
+          },
+          {
+            type: "table",
+            caption: "Example month: 3kW system, 3kW sanctioned load, KESCO urban domestic tariff",
+            head: ["", "Import 400, export 325", "Import 250, export 325"],
+            rows: [
+              ["Net units", "75 billed", "75 banked as credit"],
+              ["Energy charge", "₹413", "₹0"],
+              ["Fixed charge", "₹330", "₹330"],
+              ["Duty (5%)", "₹37", "₹17"],
+              ["Bill", "about ₹780", "about ₹347"],
+            ],
+          },
+          {
+            type: "p",
+            text: "The full before-and-after bill for a 400-unit home is in [is rooftop solar worth it in Kanpur](/blog/is-rooftop-solar-worth-it-kanpur).",
+          },
+        ],
+      },
+      {
+        heading: "What happens to spare units at year-end",
+        blocks: [
+          {
+            type: "p",
+            text: "Banked credit rolls over month to month until the financial year closes on 31 March. Credit left over then is paid out, not carried into the next year.",
+          },
+          {
+            type: "p",
+            text: "Since 5 July 2025, UPERC's rooftop solar rules set that payout as the average tariff of recent large solar auctions plus a 25% incentive. In practice that is about ₹3 a unit. A unit you use yourself saves ₹5.50–6.50, so it is worth about twice a unit you export and never claw back.",
+          },
+          {
+            type: "note",
+            text: "This is why monsoon months matter. Credit banked from March to June helps cover July to September, when output falls. Sizing to your yearly average, not your summer peak, keeps that credit in use instead of being paid out at ₹3.",
+          },
+        ],
+      },
+      {
+        heading: "Sizing rules that follow from this",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Average the units on your last 12 KESCO bills. A 1kW system makes about 108 units a month in Kanpur, so divide your average by 108 for a first estimate of size.",
+              "Your system generally can't be bigger than your sanctioned load. If you need more, apply to KESCO for a load increase before applying for solar.",
+              "The fixed charge rises with sanctioned load, at ₹110 per kW each month. Don't raise your load further than the system needs.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Our [solar calculator](/solar-calculator-kanpur) runs this sizing for you from your bill.",
+          },
+        ],
+      },
+      {
+        heading: "Applying for the net meter",
+        blocks: [
+          {
+            type: "p",
+            text: "For homes, the net meter is applied for through the PM Surya Ghar portal after installation, as step 4 of the subsidy process. KESCO inspects the system, fits the meter and commissions it, usually 2 to 4 weeks after you apply. The whole sequence is in our [PM Surya Ghar application guide](/blog/pm-surya-ghar-application-guide).",
+          },
+          {
+            type: "p",
+            text: "Registration fees and meter charges are set by KESCO and have changed over time. Ask your installer to put the current figures in the quote, so you aren't surprised at commissioning.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do I need a battery with net metering?",
+        answer:
+          "No. The grid acts as your store: daytime export is credited against evening import. A battery is only worth adding if you want backup during power cuts.",
+      },
+      {
+        question: "Does net metering work during a KESCO power cut?",
+        answer:
+          "No. An on-grid inverter switches off when the grid fails, so linemen working on the line are not put at risk. You need a hybrid inverter with a battery for backup.",
+      },
+      {
+        question: "Is unused credit carried into the next financial year?",
+        answer:
+          "No. Credit carries forward month to month until 31 March, and what is left is then paid out at the year-end compensation rate of about ₹3 a unit.",
+      },
+    ],
+    sources: [
+      { label: "PM Surya Ghar Muft Bijli Yojana: official portal (net meter application)", url: "https://pmsuryaghar.gov.in/" },
+      { label: "Uttar Pradesh Electricity Regulatory Commission (UPERC)", url: "https://www.uperc.org/" },
+      { label: "UPERC rooftop solar regulations, Third Amendment 2025: solar injection compensation (TeamLease RegTech)", url: "https://www.teamleaseregtech.com/updates/article/44522/uperc-rooftop-solar-pv-grid-interactive-system-gross-net-metering-regu/" },
+      { label: "KESCO domestic tariff slabs 2026-27 (TheDiscomBill)", url: "https://thediscombill.com/tariffs/uttar-pradesh/kesco/" },
     ],
   },
 ];
