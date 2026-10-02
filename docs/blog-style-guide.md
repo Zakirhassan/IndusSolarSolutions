@@ -21,7 +21,8 @@ build fails if a post breaks them, so fix the writing rather than the test.
   subsidy page, kW system pages or other posts, using `[text](/path)`. The
   test checks that each link resolves to a real route.
 - **At least 2 sources, one official (tested).** That means pmsuryaghar.gov.in,
-  upneda.org.in, uperc.org or kesco.co.in. Third-party pages are fine for
+  upneda.org.in or uperc.org (kesco.co.in didn't respond when checked
+  on 2026-10-02). Third-party pages are fine for
   market prices, and name them in the label.
 - **At least 3 FAQs (tested).** Use questions people actually type, answered
   in one to three sentences. No question may repeat one on `/faq` or in
@@ -55,7 +56,6 @@ build fails if a post breaks them, so fix the writing rather than the test.
 The list lives in `src/data/bannedPhrases.ts`. It applies to blog posts and to
 all other site copy (`src/data/siteCopy.test.ts`), except testimonials, which
 are customers' own words.
-
 
 honest/honestly, delve, navigate, journey, unlock, seamless, robust, leverage,
 game-changer, comprehensive, "in today's", "it's worth noting", furthermore,
@@ -102,5 +102,5 @@ input** can't be written well without real data from our own jobs.
 2. Screenshots of monthly generation from 1–2 installed inverter apps.
 3. Photos from real installs: roof before, structure, finished array,
    net meter.
-4. Our actual price range per kW, so posts can quote our own figures and not
-   only market lists.
+4. ~~Our actual price range per kW~~ Done: ₹70,000/kW for 1–2kW, ₹1.65–1.95
+   lakh for 3kW (confirmed 2026-09-25, used in the cost guide).
